@@ -1,0 +1,23 @@
+.ballerina
+    display: flex
+    align-items: center
+    overflow: hidden
+
+    .subject
+        display: block
+        position: relative
+        height: 90vh
+        width: 100%
+        animation-name: ballerina-movement
+        animation-duration: 6s
+        animation-iteration-count: infinite
+        animation-direction: alternate
+        animation-timing-function: ease-in-out
+
+@keyframes ballerina-movement
+    0%
+        transform: translateY(5vh)
+    
+    100%
+        transform: translateY(-5vh)
+        
