@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Gotham Book';
+    src: local('Gotham Book'), local('Gotham-Book'),
+        url('/fonts/subset-Gotham-Book.woff2') format('woff2'),
+        url('/fonts/subset-Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: local('Gotham Light'), local('Gotham-Light'),
+        url('/fonts/subset-Gotham-Light.woff2') format('woff2'),
+        url('/fonts/subset-Gotham-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: local('Georgia'),
+        url('/fonts/subset-Georgia.woff2') format('woff2'),
+        url('/fonts/subset-Georgia.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Metrisch';
+    src: local('Metrisch Light'), local('Metrisch-Light'),
+        url('/fonts/subset-Metrisch-Light.woff2') format('woff2'),
+        url('/fonts/subset-Metrisch-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zona Pro';
+    src: local('Zona Pro Thin'), local('ZonaPro-Thin'),
+        url('/fonts/subset-ZonaPro-Thin.woff2') format('woff2'),
+        url('/fonts/subset-ZonaPro-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: local('Myriad Pro'), local('MyriadPro-Regular'),
+        url('/fonts/subset-MyriadPro-Regular.woff2') format('woff2'),
+        url('/fonts/subset-MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
