@@ -1,0 +1,28 @@
+@import ./../constants
+    
+.landscape
+    .lettering
+        display: grid
+        grid-template-rows: auto 24px 12px
+        row-gap: 24px
+        position: absolute
+        top: 0
+        left: 16vw
+        text-transform: uppercase
+        text-align: center
+        color: #ffffff
+        height: 40vh
+
+        hr
+            margin: 0 auto
+            background-color: #ffffff
+            width: 2px
+        
+        h2 
+            font-size: 2rem
+            @include georgia()
+
+        p
+            font-size: .9rem
+            @include zona-pro()
+            
