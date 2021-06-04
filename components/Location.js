@@ -6,7 +6,7 @@ import Glide from "@glidejs/glide"
 export default function Location() {
 
     useEffect(() => {
-        new Glide(".glide", {
+        new Glide(".glide--location", {
             gap: 0
         }).mount()
     })
@@ -14,7 +14,7 @@ export default function Location() {
     return (
         <section className={[styles.location, "panel"].join(" ")}>
             <div className={styles.slider}>
-                <div className="glide glide--full-height">
+                <div className="glide glide--location glide--full-height">
                     <div className="glide__track" data-glide-el="track">
                         <ul className="glide__slides">
                             <li className="glide__slide">

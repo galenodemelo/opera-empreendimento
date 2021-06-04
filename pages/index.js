@@ -5,6 +5,7 @@ import Image from "next/image"
 import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import Opening from "../components/Opening"
+import Sophistication from "../components/Sophistication"
 
 export default function Home() {
     return (
@@ -22,6 +23,8 @@ export default function Home() {
             <section className="panel">
                 <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" loading="lazy" />
             </section>
+
+            <Sophistication/>
         </>
     )
 }
