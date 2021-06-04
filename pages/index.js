@@ -5,6 +5,7 @@ import Image from "next/image"
 import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import Opening from "../components/Opening"
+import PictureSlider from "../components/PictureSlider"
 import Sophistication from "../components/Sophistication"
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
             </section>
 
             <Sophistication/>
+            <PictureSlider/>
         </>
     )
 }
