@@ -4,6 +4,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Landscape from "../components/Landscape"
 import Location from "../components/Location"
+import Naturality from "../components/Naturality"
 import Opening from "../components/Opening"
 import PictureSlider from "../components/PictureSlider"
 import Sophistication from "../components/Sophistication"
@@ -26,7 +27,7 @@ export default function Home() {
             </section>
 
             <Sophistication/>
-            <PictureSlider/>
+            <Naturality/>
         </>
     )
 }
