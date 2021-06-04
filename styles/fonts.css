@@ -39,6 +39,16 @@
 }
 
 @font-face {
+    font-family: 'Metrisch';
+    src: local('Metrisch Medium'), local('Metrisch-Medium'),
+        url('/fonts/subset-Metrisch-Medium.woff2') format('woff2'),
+        url('/fonts/subset-Metrisch-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Zona Pro';
     src: local('Zona Pro Thin'), local('ZonaPro-Thin'),
         url('/fonts/subset-ZonaPro-Thin.woff2') format('woff2'),

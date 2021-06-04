@@ -1,11 +1,13 @@
 @import ./reset.css
 @import ./fonts.css
+@import ./../node_modules/@glidejs/glide/src/assets/sass/glide.core
 
 button,
 hr
     background: none
     outline: 0
     border: 0
+    margin: 0
 
 video
     object-fit: fill
@@ -14,3 +16,12 @@ video
     position: relative
     width: 100%
     height: 100vh
+
+.glide--full-height
+    height: 100vh
+
+    .glide__track,
+    .glide__slides,
+    .glide__slide
+        position: relative
+        height: 100vh
