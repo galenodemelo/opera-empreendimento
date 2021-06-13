@@ -7,6 +7,7 @@ import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import Naturality from "../components/Naturality"
 import Opening from "../components/Opening"
+import Plans from "../components/Plans"
 import PictureSlider from "../components/templates/PictureSlider"
 import SecondTone from "../components/SecondTone"
 import Sophistication from "../components/Sophistication"
@@ -44,6 +45,8 @@ export default function Home(props) {
             <FirstTone/>
             <SecondTone/>
             <ThirdTone/>
+
+            <Plans/>
         </>
     )
 }
