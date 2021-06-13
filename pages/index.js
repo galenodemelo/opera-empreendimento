@@ -8,6 +8,7 @@ import Location from "../components/Location"
 import Naturality from "../components/Naturality"
 import Opening from "../components/Opening"
 import PictureSlider from "../components/templates/PictureSlider"
+import SecondTone from "../components/SecondTone"
 import Sophistication from "../components/Sophistication"
 
 export default function Home(props) {
@@ -40,6 +41,7 @@ export default function Home(props) {
             </section>
 
             <FirstTone/>
+            <SecondTone/>
         </>
     )
 }
