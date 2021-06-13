@@ -10,6 +10,7 @@ import Opening from "../components/Opening"
 import PictureSlider from "../components/templates/PictureSlider"
 import SecondTone from "../components/SecondTone"
 import Sophistication from "../components/Sophistication"
+import ThirdTone from "../components/ThirdTone"
 
 export default function Home(props) {
     return (
@@ -42,6 +43,7 @@ export default function Home(props) {
 
             <FirstTone/>
             <SecondTone/>
+            <ThirdTone/>
         </>
     )
 }
