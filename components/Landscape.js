@@ -4,7 +4,7 @@ import styles from "./../styles/components/Landscape.module.sass"
 export default function Landscape() {
     return (
         <section className={[styles.landscape, "panel"].join(" ")}>
-            <Image src="/img/bg/landscape.jpg" layout="fill" objectFit="cover" loading="lazy" />
+            <Image src="/img/bg/landscape.jpg" layout="fill" objectFit="cover" loading="lazy" quality="75" />
 
             <div className={styles.lettering}>
                 <hr />

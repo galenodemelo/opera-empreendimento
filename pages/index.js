@@ -1,12 +1,13 @@
 import Ballerina from "../components/Ballerina"
 import ConceptVideo from "../components/ConceptVideo"
+import FirstTone from "../components/FirstTone"
 import Head from "next/head"
 import Image from "next/image"
 import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import Naturality from "../components/Naturality"
 import Opening from "../components/Opening"
-import PictureSlider from "../components/PictureSlider"
+import PictureSlider from "../components/templates/PictureSlider"
 import Sophistication from "../components/Sophistication"
 
 export default function Home(props) {
@@ -27,9 +28,18 @@ export default function Home(props) {
             </section>
 
             <Sophistication/>
-            <PictureSlider imageList={props.commonAreas1}/>
+
+            <section className="panel">
+                <PictureSlider imageList={props.commonAreas1}/>
+            </section>
+
             <Naturality/>
-            <PictureSlider imageList={props.commonAreas2}/>
+
+            <section className="panel">
+                <PictureSlider imageList={props.commonAreas2}/>
+            </section>
+
+            <FirstTone/>
         </>
     )
 }
