@@ -1,0 +1,93 @@
+@import ./../constants
+
+.contact
+    display: grid
+    grid-template-columns: 55% 45%
+    align-items: center
+    background-color: #000
+    color: #fff
+
+
+    .form
+        padding-left: 160px
+        box-sizing: border-box
+
+        .intro
+            font-size: .9rem
+            letter-spacing: 3px
+            text-transform: uppercase
+            margin-bottom: 8px
+            @include metrisch()
+
+        .divided
+            display: grid
+            grid-template-columns: 1fr 1fr
+            column-gap: 24px
+
+        .group
+            margin-top: 24px
+
+            label
+                display: block
+                margin-bottom: 8px
+                font-size: 1rem
+                @include metrisch()
+                
+            
+            input,
+            textarea,
+            select
+                width: 100%
+                box-sizing: border-box
+                padding: 8px 10px
+                font-size: .9rem
+                @include zona-pro()
+
+            textarea
+                resize: none
+                height: 90px
+                
+        .note
+            margin-top: 8px
+            font-size: .8rem
+            letter-spacing: .5px
+            @include metrisch()
+            
+        .submit
+            float: right
+            margin-top: 8px
+
+            img
+                width: 44px
+
+    .logo
+        display: flex
+        flex-direction: column
+        align-items: center
+        height: 100%
+        width: 100%
+        text-align: center
+
+        hr
+            height: 30vh
+            width: 2px
+            background-color: #ffffff
+            
+        figure
+            margin-top: 60px
+            width: 60%
+
+        figcaption
+            margin-top: 24px
+            font-size: 1rem
+            letter-spacing: 3px
+            text-transform: uppercase
+            
+            @include georgia()
+
+        p
+            margin: auto
+            font-size: 1rem
+            line-height: 1.4
+            @include metrisch()
+            

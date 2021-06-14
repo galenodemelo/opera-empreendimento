@@ -1,5 +1,6 @@
 import Ballerina from "../components/Ballerina"
 import ConceptVideo from "../components/ConceptVideo"
+import Contact from "../components/Contact"
 import FirstTone from "../components/FirstTone"
 import Head from "next/head"
 import Image from "next/image"
@@ -49,6 +50,7 @@ export default function Home(props) {
 
             <Plans/>
             <Investcorp/>
+            <Contact/>
         </>
     )
 }
