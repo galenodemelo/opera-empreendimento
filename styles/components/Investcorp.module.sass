@@ -1,0 +1,26 @@
+@import ./../constants
+
+.investcorp
+    display: grid
+    align-items: center
+    grid-template-columns: 35% auto
+    background-color: #000000
+
+    .background
+        height: 100%
+        position: relative
+
+    .text
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        color: #fff
+
+        p
+            max-width: 650px
+            line-height: 1.4
+            font-size: .9rem
+            margin-bottom: 24px
+            @include metrisch()
+            

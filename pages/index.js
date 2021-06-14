@@ -3,6 +3,7 @@ import ConceptVideo from "../components/ConceptVideo"
 import FirstTone from "../components/FirstTone"
 import Head from "next/head"
 import Image from "next/image"
+import Investcorp from "../components/Investcorp"
 import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import Naturality from "../components/Naturality"
@@ -47,6 +48,7 @@ export default function Home(props) {
             <ThirdTone/>
 
             <Plans/>
+            <Investcorp/>
         </>
     )
 }
