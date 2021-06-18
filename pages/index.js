@@ -16,18 +16,21 @@ import PictureSlider from "../components/templates/PictureSlider"
 import SecondTone from "../components/SecondTone"
 import Sophistication from "../components/Sophistication"
 import ThirdTone from "../components/ThirdTone"
+import { useState } from "react"
 
 export default function Home(props) {
+    const [isSoundActive, setIsSoundActive] = useState(false)
+
     return (
         <>
             <Head>
                 <title>Opera: Cada tom, uma história | Investcorp Empreendimentos</title>
             </Head>
 
-            <Opening/>
+            <Opening setIsSoundActive={setIsSoundActive}/>
 
             <Navigation/>
-            <MusicPlayer/>
+            <MusicPlayer isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
 
             <Ballerina/>
             <Landscape/>

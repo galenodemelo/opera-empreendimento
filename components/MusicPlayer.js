@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import styles from "./../styles/components/MusicPlayer.module.sass"
 
-export default function MusicPlayer() {
-    const [isSoundActive, setIsSoundActive] = useState(false)
+export default function MusicPlayer({isSoundActive, setIsSoundActive}) {
     const audioPlayer = useRef()
 
     useEffect(() => {
