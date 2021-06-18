@@ -9,6 +9,7 @@ import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import MusicPlayer from "../components/MusicPlayer"
 import Naturality from "../components/Naturality"
+import Navigation from "../components/Navigation"
 import Opening from "../components/Opening"
 import Plans from "../components/Plans"
 import PictureSlider from "../components/templates/PictureSlider"
@@ -25,6 +26,7 @@ export default function Home(props) {
 
             <Opening/>
 
+            <Navigation/>
             <MusicPlayer/>
 
             <Ballerina/>
