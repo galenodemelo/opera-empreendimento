@@ -14,13 +14,30 @@
         text-align: center
         cursor: pointer
 
-        &[data-active="false"] img
-            transform: translateY(-100%)
-
         img
             max-width: 100%
             max-height: 100%
-            transition: transform .4s ease
+            transition: transform .8s ease, opacity 1.4s ease
+
+        &[data-active="true"] 
+            img
+                transform: translateY(0%)
+
+                &:first-child
+                    opacity: 1
+
+                &:last-child
+                    opacity: 0
+
+        &[data-active="false"] 
+            img
+                transform: translateY(-100%)
+
+                &:first-child
+                    opacity: 0
+
+                &:last-child
+                    opacity: 1
 
     .player
         display: none
