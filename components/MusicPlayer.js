@@ -20,7 +20,7 @@ export default function MusicPlayer() {
                 <img src="/img/ico/sound-off.svg" alt="Ativar música" title="Ativar música" />
             </button>
 
-            <audio ref={audioPlayer} className={styles.player}>
+            <audio ref={audioPlayer} className={styles.player} loop>
                 <source src="/audio/la-boca-fiesta.ogg" type="audio/ogg" />
                 <source src="/audio/la-boca-fiesta.mp3" type="audio/mpeg" />
             </audio>
