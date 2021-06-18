@@ -16,10 +16,16 @@ import PictureSlider from "../components/templates/PictureSlider"
 import SecondTone from "../components/SecondTone"
 import Sophistication from "../components/Sophistication"
 import ThirdTone from "../components/ThirdTone"
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Mousewheel } from "swiper"
+
 import { useState } from "react"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
+
+    SwiperCore.use([Mousewheel])
 
     return (
         <>
@@ -27,39 +33,78 @@ export default function Home(props) {
                 <title>Opera: Cada tom, uma história | Investcorp Empreendimentos</title>
             </Head>
 
-            <Opening setIsSoundActive={setIsSoundActive}/>
-
             <Navigation/>
             <MusicPlayer isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
+            
+            <Swiper direction="vertical"
+                    slidesPerView={1}
+                    className="panel"
+                    mousewheel={true}
+                    speed={1000}>
+                <SwiperSlide>
+                    <Opening setIsSoundActive={setIsSoundActive}/>
+                </SwiperSlide>
 
-            <Ballerina/>
-            <Landscape/>
-            <ConceptVideo/>
-            <Location/>
+                <SwiperSlide>
+                    <Ballerina/>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    <Landscape/>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    <ConceptVideo/>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                    <Location/>
+                </SwiperSlide>
 
-            <section className="panel">
-                <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" loading="lazy" />
-            </section>
+                <SwiperSlide>
+                    <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" loading="lazy" />
+                </SwiperSlide>
 
-            <Sophistication/>
+                <SwiperSlide>
+                    <Sophistication/>
+                </SwiperSlide>
 
-            <section className="panel">
-                <PictureSlider imageList={props.commonAreas1}/>
-            </section>
+                <SwiperSlide>
+                    <PictureSlider imageList={props.commonAreas1}/>
+                </SwiperSlide>
 
-            <Naturality/>
+                <SwiperSlide>
+                    <PictureSlider imageList={props.commonAreas2}/>
+                </SwiperSlide>
 
-            <section className="panel">
-                <PictureSlider imageList={props.commonAreas2}/>
-            </section>
+                <SwiperSlide>
+                    <Naturality/>
+                </SwiperSlide>
 
-            <FirstTone/>
-            <SecondTone/>
-            <ThirdTone/>
+                <SwiperSlide>
+                    <FirstTone/>
+                </SwiperSlide>
 
-            <Plans/>
-            <Investcorp/>
-            <Contact/>
+                <SwiperSlide>
+                    <SecondTone/>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <ThirdTone/>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Plans/>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Investcorp/>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Contact/>
+                </SwiperSlide>
+            </Swiper>
         </>
     )
 }

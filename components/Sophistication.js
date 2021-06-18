@@ -1,31 +1,20 @@
 import Image from "next/image"
 import styles from "./../styles/components/Sophistication.module.sass"
-import { useEffect } from "react"
-import Glide from "@glidejs/glide"
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function Sophistication() {
-
-    useEffect(() => {
-        new Glide(".glide--sophistication", {
-            gap: 0
-        }).mount()
-    })
 
     return (
         <section className={[styles.sophistication, "panel"].join(" ")}>
             <div className={styles.slider}>
-                <div className="glide glide--sophistication glide--full-height">
-                    <div className="glide__track" data-glide-el="track">
-                        <ul className="glide__slides">
-                            <li className="glide__slide">
-                                <Image src="/img/sliders/sophistication/1.jpg" layout="fill" objectFit="cover" alt="Foto do hall de entrada do empreendimento Opera à noite" loading="lazy" />
-                            </li>
-                            <li className="glide__slide">
-                                <Image src="/img/sliders/sophistication/2.jpg" layout="fill" objectFit="cover" alt="Foto da fachada do empreendimento Opera à noite" loading="lazy" />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <Swiper className="panel">
+                    <SwiperSlide>
+                        <Image src="/img/sliders/sophistication/1.jpg" layout="fill" objectFit="cover" alt="Foto do hall de entrada do empreendimento Opera à noite" loading="lazy" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src="/img/sliders/sophistication/2.jpg" layout="fill" objectFit="cover" alt="Foto da fachada do empreendimento Opera à noite" loading="lazy" />
+                    </SwiperSlide>
+                </Swiper>
             </div>
             <div className={styles.textbox}>
                 <hr/>
