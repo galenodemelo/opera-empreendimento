@@ -6,8 +6,8 @@ export default function Textbox({title, text, button}) {
         <div className={styles.textbox}>
             <hr/>
             <div className={styles.content}>
-                <h2>{title.split("\n").map(it => (<>{it}<br/></>))}</h2>
-                <p>{text.split("\n").map(it => (<>{it}<br/></>))}</p>
+                <h2>{title.split("\n").map((it, index) => (<span key={index}>{it}<br/></span>))}</h2>
+                <p>{text.split("\n").map((it, index) => (<span key={index}>{it}<br/></span>))}</p>
                 {button &&
                     <Button label={button.text}/>
                 }
