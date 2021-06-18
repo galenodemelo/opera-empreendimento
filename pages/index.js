@@ -7,6 +7,7 @@ import Image from "next/image"
 import Investcorp from "../components/Investcorp"
 import Landscape from "../components/Landscape"
 import Location from "../components/Location"
+import MusicPlayer from "../components/MusicPlayer"
 import Naturality from "../components/Naturality"
 import Opening from "../components/Opening"
 import Plans from "../components/Plans"
@@ -23,6 +24,9 @@ export default function Home(props) {
             </Head>
 
             <Opening/>
+
+            <MusicPlayer/>
+
             <Ballerina/>
             <Landscape/>
             <ConceptVideo/>
