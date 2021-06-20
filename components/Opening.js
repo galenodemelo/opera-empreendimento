@@ -8,8 +8,8 @@ export default function Opening({setIsSoundActive}) {
             <nav className={styles.menu}>
                 <h6>Sound experience</h6>
 
-                <button onClick={() => setIsSoundActive(true)}>Yes</button>
-                <button onClick={() => setIsSoundActive(false)}>No</button>
+                <button onClick={() => setIsSoundActive(true)} className="swiper-button-next">Yes</button>
+                <button onClick={() => setIsSoundActive(false)} className="swiper-button-next">No</button>
             </nav>
         </section>
     )

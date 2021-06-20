@@ -9,7 +9,7 @@ import Landscape from "../components/Landscape"
 import Location from "../components/Location"
 import MusicPlayer from "../components/MusicPlayer"
 import Naturality from "../components/Naturality"
-import Navigation from "../components/Navigation"
+import NavMenu from "../components/NavMenu"
 import Opening from "../components/Opening"
 import Plans from "../components/Plans"
 import PictureSlider from "../components/templates/PictureSlider"
@@ -18,14 +18,14 @@ import Sophistication from "../components/Sophistication"
 import ThirdTone from "../components/ThirdTone"
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Mousewheel } from "swiper"
+import SwiperCore, { Mousewheel, Navigation } from "swiper"
 
 import { useState } from "react"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
 
-    SwiperCore.use([Mousewheel])
+    SwiperCore.use([Mousewheel, Navigation])
 
     return (
         <>
@@ -33,14 +33,19 @@ export default function Home(props) {
                 <title>Opera: Cada tom, uma história | Investcorp Empreendimentos</title>
             </Head>
 
-            <Navigation/>
+            <NavMenu/>
             <MusicPlayer isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
             
-            <Swiper direction="vertical"
-                    slidesPerView={1}
-                    className="panel"
+            <Swiper className="panel"
+                    direction="vertical"
+                    effect="flip"
                     mousewheel={true}
+                    navigation={{
+                        nextEl: ".swiper-button-next"
+                    }}
+                    slidesPerView={1}
                     speed={1000}>
+                
                 <SwiperSlide>
                     <Opening setIsSoundActive={setIsSoundActive}/>
                 </SwiperSlide>

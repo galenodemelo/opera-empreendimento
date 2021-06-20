@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./../styles/components/Navigation.module.sass"
 
-export default function Navigation() {
+export default function NavMenu() {
     const [isMenuOpened, setMenuOpened] = useState(false)
 
     const menuLinksList = [
