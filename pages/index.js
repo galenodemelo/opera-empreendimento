@@ -18,14 +18,14 @@ import Sophistication from "../components/Sophistication"
 import ThirdTone from "../components/ThirdTone"
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Mousewheel, Navigation } from "swiper"
+import SwiperCore, { HashNavigation, Mousewheel, Navigation } from "swiper"
 
 import { useState } from "react"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
 
-    SwiperCore.use([Mousewheel, Navigation])
+    SwiperCore.use([HashNavigation, Mousewheel, Navigation])
 
     return (
         <>
@@ -38,11 +38,9 @@ export default function Home(props) {
             
             <Swiper className="panel"
                     direction="vertical"
-                    effect="flip"
+                    hashNavigation={{watchState: true}}
                     mousewheel={true}
-                    navigation={{
-                        nextEl: ".swiper-button-next"
-                    }}
+                    navigation={{nextEl: ".swiper-button-next"}}
                     slidesPerView={1}
                     speed={1000}>
                 
@@ -54,7 +52,7 @@ export default function Home(props) {
                     <Ballerina/>
                 </SwiperSlide>
                 
-                <SwiperSlide>
+                <SwiperSlide data-hash="cada-tom-uma-historia">
                     <Landscape/>
                 </SwiperSlide>
                 
@@ -62,7 +60,7 @@ export default function Home(props) {
                     <ConceptVideo/>
                 </SwiperSlide>
                 
-                <SwiperSlide>
+                <SwiperSlide data-hash="tradicao-contemporanea">
                     <Location/>
                 </SwiperSlide>
 
@@ -70,7 +68,7 @@ export default function Home(props) {
                     <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" loading="lazy" />
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="sofisticacao">
                     <Sophistication/>
                 </SwiperSlide>
 
@@ -82,7 +80,7 @@ export default function Home(props) {
                     <PictureSlider imageList={props.commonAreas2}/>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="naturalidade">
                     <Naturality/>
                 </SwiperSlide>
 
@@ -98,15 +96,15 @@ export default function Home(props) {
                     <ThirdTone/>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="plantas">
                     <Plans/>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="investcorp">
                     <Investcorp/>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="contato">
                     <Contact/>
                 </SwiperSlide>
             </Swiper>

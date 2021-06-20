@@ -5,13 +5,13 @@ export default function NavMenu() {
     const [isMenuOpened, setMenuOpened] = useState(false)
 
     const menuLinksList = [
-        {title: "Cada tom, uma história"},
-        {title: "A tradição contemporânea"},
-        {title: "A sofisticação"},
-        {title: "A naturalidade"},
-        {title: "Ícones residências suspensas"},
-        {title: "Investcorp"},
-        {title: "Contato"}
+        {title: "Cada tom, uma história", hash: "cada-tom-uma-historia"},
+        {title: "A tradição contemporânea", hash: "tradicao-contemporanea"},
+        {title: "A sofisticação", hash: "sofisticacao"},
+        {title: "A naturalidade", hash: "naturalidade"},
+        {title: "Ícones residências suspensas", hash: "plantas"},
+        {title: "Investcorp", hash: "investcorp"},
+        {title: "Contato", hash: "contato"}
     ]
 
     const playSound = (number) => {
@@ -33,7 +33,7 @@ export default function NavMenu() {
                 <nav className={styles.links}>
                     {menuLinksList.map((menuLink, index) => {
                         return (
-                            <a href="#" data-sfx={++index} key={index} onMouseOver={() => { playSound(index) }}>
+                            <a href={`#${menuLink.hash}`} data-sfx={++index} key={index} onMouseOver={() => { playSound(index) }} onClick={() => setMenuOpened(false)}>
                                 {menuLink.title}
                             </a>
                         )
