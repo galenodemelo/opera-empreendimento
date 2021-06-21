@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import styles from "./../styles/components/MusicPlayer.module.sass"
 
-export default function MusicPlayer({isSoundActive, setIsSoundActive}) {
+export default function MusicPlayer({currentSlide, isSoundActive, setIsSoundActive}) {
     const audioPlayer = useRef()
 
     useEffect(() => {
@@ -11,9 +11,14 @@ export default function MusicPlayer({isSoundActive, setIsSoundActive}) {
             audioPlayer.current.pause()
         }
     }, [isSoundActive])
+    
+    const classList = [styles.musicPlayer]
+    
+    const shouldInvert = [2, 3, 5, 6, 7, 8, 11, 13, 14, 15].includes(currentSlide)
+    if (shouldInvert) classList.push(styles["musicPlayer--inverted"])
 
     return (
-        <div className={styles.musicPlayer}>
+        <div className={classList.join(" ")}>
             <button onClick={() => setIsSoundActive(!isSoundActive)} className={styles.switcher} data-active={isSoundActive}>
                 <img src="/img/ico/sound-on.svg" alt="Desativar música" title="Desativar música" />
                 <img src="/img/ico/sound-off.svg" alt="Ativar música" title="Ativar música" />

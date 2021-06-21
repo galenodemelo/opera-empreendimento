@@ -13,6 +13,7 @@
         height: 32px
         text-align: center
         cursor: pointer
+        transition: filter .8s ease
 
         img
             max-width: 100%
@@ -38,6 +39,10 @@
 
                 &:last-child
                     opacity: 1
+
+    &--inverted
+        .switcher
+            filter: invert(1)
 
     .player
         display: none

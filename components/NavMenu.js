@@ -1,7 +1,7 @@
 import { useState } from "react"
-import styles from "./../styles/components/Navigation.module.sass"
+import styles from "./../styles/components/NavMenu.module.sass"
 
-export default function NavMenu() {
+export default function NavMenu({currentSlide}) {
     const [isMenuOpened, setMenuOpened] = useState(false)
 
     const menuLinksList = [
@@ -19,8 +19,13 @@ export default function NavMenu() {
         audio.play()
     }
 
+    const classList = [styles.navigation]
+
+    const shouldInvert = [2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 15].includes(currentSlide)
+    if (shouldInvert) classList.push(styles["navigation--inverted"])
+
     return (
-        <div className={styles.navigation}>
+        <div className={classList.join(" ")}>
             <button className={styles.opener} onClick={() => setMenuOpened(true)}>
                 <img src="/img/ico/menu.svg" alt="Ícone para abrir o menu" title="Abrir menu" />
             </button>

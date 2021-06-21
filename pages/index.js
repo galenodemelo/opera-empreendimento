@@ -24,6 +24,7 @@ import { useState } from "react"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
+    const [activeIndex, setActiveIndex] = useState(0)
 
     SwiperCore.use([HashNavigation, Mousewheel, Navigation])
 
@@ -33,14 +34,15 @@ export default function Home(props) {
                 <title>Opera: Cada tom, uma história | Investcorp Empreendimentos</title>
             </Head>
 
-            <NavMenu/>
-            <MusicPlayer isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
+            <NavMenu currentSlide={activeIndex}/>
+            <MusicPlayer currentSlide={activeIndex} isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
             
             <Swiper className="panel"
                     direction="vertical"
                     hashNavigation={{watchState: true}}
                     mousewheel={true}
                     navigation={{nextEl: ".swiper-button-next"}}
+                    onSlideChange={(evt) => setActiveIndex(evt.activeIndex)}
                     slidesPerView={1}
                     speed={1000}>
                 
