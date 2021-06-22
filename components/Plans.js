@@ -62,7 +62,21 @@ export default function Plans() {
                                                Sacada gourmet 
                                                2 unidades apenas (25º e 27º andar)`}}/>
 
-                <Button label="Apogeo" sub="431m²" inverted="true"/>
+                {/* FOURTH TONE */}
+                <Button label="Apogeo" sub="431m²" inverted="true" onClick={() => setIsFourthToneOpened(true)}/>
+                <Lightbox imageList={[{url: "/img/plans/fourth-tone-01.jpg", alt: "Planta do apartamento 4º Tom do empreendimento Ópera"}]}
+                          opened={isFourthToneOpened} 
+                          setIsOpened={setIsFourthToneOpened}
+                          inverted={true}
+                          text={{title: `4º tom
+                                         apogeu`,
+                                 description: `Cobertura 431.65 m² 
+                                               4 suítes 
+                                               Elevador privativo 
+                                               Sala íntima 
+                                               Living integrado 
+                                               Sacada gourmet 
+                                               1 unidade apenas (28º andar)`}}/>
             </nav>
         </section>
     )
