@@ -12,7 +12,7 @@ export default function Lightbox({imageList, opened, setIsOpened}) {
             <Swiper className={styles.frame}>
                 {imageList.map((image, index) => (
                     <SwiperSlide key={index}>
-                        <Image src={image.url} alt={image.alt} layout="fill" objectFit="contain" />
+                        <Image src={image.url} alt={image.alt} layout="fill" objectFit="contain" loading="lazy" />
                     </SwiperSlide>
                 ))}
             </Swiper>
