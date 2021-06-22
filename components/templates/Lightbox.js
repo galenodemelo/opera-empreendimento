@@ -1,6 +1,5 @@
-import Image from "next/image"
+import PictureSlider from "./PictureSlider"
 import styles from "./../../styles/components/templates/Lightbox.module.sass"
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function Lightbox({imageList, opened, setIsOpened}) {
     return (
@@ -9,13 +8,11 @@ export default function Lightbox({imageList, opened, setIsOpened}) {
                 <img src="/img/ico/close.svg" alt="Fechar imagem" title="Fechar imagem" />
             </button>
 
-            <Swiper className={styles.frame}>
-                {imageList.map((image, index) => (
-                    <SwiperSlide key={index}>
-                        <Image src={image.url} alt={image.alt} layout="fill" objectFit="contain" loading="lazy" />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            {opened &&
+                <div className={styles.frame}>
+                    <PictureSlider imageList={imageList}/>
+                </div>
+            }
         </div>
     )
 }
