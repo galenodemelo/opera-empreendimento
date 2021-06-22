@@ -30,7 +30,21 @@ export default function Plans() {
                                                Sacada gourmet 
                                                Living integrado`}}/>
 
-                <Button label="Exímio" sub="199m²" inverted="true"/>
+                {/* SECOND TONE */}
+                <Button label="Exímio" sub="199m²" inverted="true" onClick={() => setIsSecondToneOpened(true)}/>
+                <Lightbox imageList={[{url: "/img/plans/second-tone-01.jpg", alt: "Planta do apartamento 2º Tom do empreendimento Ópera"}]}
+                          opened={isSecondToneOpened} 
+                          setIsOpened={setIsSecondToneOpened}
+                          inverted={true}
+                          text={{title: `2º tom
+                                         exímio`,
+                                 description: `199,61 m² 
+                                               03 suítes 
+                                               Elevador social privativo 
+                                               Sacada gourmet 
+                                               Living integrado`}}/>
+
+
                 <Button label="Ápice" sub="434m²" inverted="true"/>
                 <Button label="Apogeo" sub="431m²" inverted="true"/>
             </nav>
