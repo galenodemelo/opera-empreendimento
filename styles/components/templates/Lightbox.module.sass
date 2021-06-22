@@ -1,0 +1,38 @@
+@import ./../../constants
+
+.lightbox
+    display: flex
+    opacity: 0
+    align-items: center
+    justify-content: center
+    position: absolute
+    margin: auto
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    width: 0
+    height: 0
+    background-color: rgba(238, 224, 224, 0.9)
+    z-index: 10
+    transition: opacity 1s ease
+
+    &[data-opened="true"]
+        width: 100vw
+        height: 100vh
+        opacity: 1
+
+    .close
+        position: absolute
+        top: 16%
+        right: 18%
+        z-index: 10
+        cursor: pointer
+
+        img
+            width: 32px
+
+    .frame
+        position: relative
+        width: 80%
+        height: 80%
