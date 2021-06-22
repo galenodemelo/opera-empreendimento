@@ -1,12 +1,25 @@
 import Image from "next/image"
+import { useEffect, useRef } from "react"
 import styles from "./../styles/components/Investcorp.module.sass"
 
-export default function Investcorp() {
+export default function Investcorp({play = false}) {
+    const videoPlayer = useRef()
+
+    useEffect(() => {
+        if (play) {
+            videoPlayer.current.play()
+        } else {
+            videoPlayer.current.pause()
+        }
+
+    })
+
     return (
         <section className={[styles.investcorp, "panel"].join(" ")}>
-            <div className={styles.background}>
-                <Image src="/img/bg/maestro.jpg" layout="fill" objectFit="contain"/>
-            </div>
+            <video muted={true} controls={false} className={styles.background} ref={videoPlayer}>
+                <source src="/videos/maestro.webm" type="video/webm"/>
+                <source src="/videos/maestro.mp4" type="video/mp4"/>
+            </video>
             <div className={styles.text}>
                 <p>Orquestramos em cada detalhe desse projeto a força e a imponência, em um roteiro digno de aclamação. O  projetamos para ser um marco e fazer florescer o que Joinville nunca viu.</p>
                 <p>O prédio mais alto. Um novo tom para a cidade.</p>

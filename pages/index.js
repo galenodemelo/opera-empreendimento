@@ -104,7 +104,9 @@ export default function Home(props) {
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="investcorp">
-                    <Investcorp/>
+                    {({ isActive }) => (
+                        <Investcorp play={isActive}/>
+                    )}
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="contato">
