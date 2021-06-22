@@ -3,7 +3,7 @@ import styles from "./../../styles/components/templates/PictureSlider.module.sas
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Pagination } from "swiper"
 
-export default function PictureSlider({imageList}) {
+export default function PictureSlider({imageList, objectFit = "cover"}) {
 
     SwiperCore.use([Pagination])
 
@@ -31,7 +31,7 @@ export default function PictureSlider({imageList}) {
             {imageList.map((item, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <Image src={item.url} layout="fill" objectFit="cover" alt={item.alt} loading="lazy" />
+                        <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt} loading="lazy" />
                     </SwiperSlide>
                 )
             })}
