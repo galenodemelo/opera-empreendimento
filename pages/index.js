@@ -40,6 +40,7 @@ export default function Home(props) {
             <Swiper className="panel"
                     direction="vertical"
                     hashNavigation={{watchState: true}}
+                    shortSwipes={false}
                     mousewheel={true}
                     navigation={{nextEl: ".swiper-button-next"}}
                     onSlideChange={(evt) => setActiveIndex(evt.activeIndex)}
