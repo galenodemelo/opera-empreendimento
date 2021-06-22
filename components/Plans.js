@@ -45,7 +45,23 @@ export default function Plans() {
                                                Living integrado`}}/>
 
 
-                <Button label="Ápice" sub="434m²" inverted="true"/>
+                {/* THIRD TONE */}
+                <Button label="Ápice" sub="434m²" inverted="true" onClick={() => setIsThirdToneOpened(true)}/>
+                <Lightbox imageList={[{url: "/img/plans/third-tone-01.jpg", alt: "Planta do apartamento 3º Tom do empreendimento Ópera"},
+                                      {url: "/img/plans/third-tone-02.jpg", alt: "Planta do apartamento 3º Tom do empreendimento Ópera"}]}
+                          opened={isThirdToneOpened} 
+                          setIsOpened={setIsThirdToneOpened}
+                          inverted={true}
+                          text={{title: `3º tom
+                                         ápice`,
+                                 description: `Duplex 434,76 m² 
+                                               5 suítes 
+                                               Elevador privativo 
+                                               Sala íntima 
+                                               Living integrado 
+                                               Sacada gourmet 
+                                               2 unidades apenas (25º e 27º andar)`}}/>
+
                 <Button label="Apogeo" sub="431m²" inverted="true"/>
             </nav>
         </section>
