@@ -7,7 +7,10 @@
     align-items: center
     background-color: #000000
 
-    .logo
+    video.logo
+        width: 100%
+
+    img.logo
         width: 490px
 
     .menu
@@ -31,11 +34,16 @@
             content: ""
             background-color: #ffffff
             width: 1px
-            height: 150px
+            transition: height 1s ease
+            transition-delay: 1.2s
+            height: 0
 
         h6
             font-family: inherit
             font-size: inherit
+            opacity: 0
+            transform: translateY(32px)
+            transition: opacity 1.5s ease, transform 1.2s ease
 
         button
             display: inline-block
@@ -47,9 +55,31 @@
             text-transform: inherit
             padding: 8px 24px
             margin-top: 32px
-            transition: padding .1s ease
+            opacity: 0
+            transition: padding .1s ease, opacity 1s ease, transform .8s ease
+            transition-delay: 3s
 
-            &:hover
-                padding: 4px 24px 12px
-                cursor: pointer
+            &:first-of-type
+                transform: translateX(64px)
+            
+            &:last-of-type
+                transform: translateX(-64px)
         
+    &--expanded
+        .menu
+            &::before
+                height: 150px
+
+            h6
+                opacity: 1
+                transform: translateY(0)
+
+            button
+                &:first-of-type,
+                &:last-of-type
+                    transform: translateX(0)
+                    opacity: 1
+
+                &:hover
+                    padding: 4px 24px 12px
+                    cursor: pointer
