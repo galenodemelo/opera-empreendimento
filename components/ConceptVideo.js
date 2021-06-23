@@ -1,29 +1,21 @@
 import Image from "next/image"
 import styles from "./../styles/components/ConceptVideo.module.sass"
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 
 export default function ConceptVideo() {
     const [videoPlayerState, setVideoPlayerState] = useState(false)
 
-    const videoPlayer = useRef()
-
-    useEffect(() => {
-        if (videoPlayerState) {
-            videoPlayer.current.play()
-        } else {
-            videoPlayer.current.pause()
-        }
-
-        videoPlayer.current.addEventListener("pause", () => {
-            setVideoPlayerState(false)
-        })
-    })
 
     return (
         <section className={[styles.conceptVideo, "panel"].join(" ")}>
-            <video className={styles.video} poster="/videos/concept-video-cover.jpg" ref={videoPlayer} onClick={() => setVideoPlayerState(!videoPlayerState)}>
-                <source src="/videos/test.mp4" type="video/mp4"/>
-            </video>
+            {videoPlayerState &&
+                <>
+                    <iframe src="https://player.vimeo.com/video/559001048?title=0&byline=0&portrait=0&autoplay=1" 
+                            className={styles.video}
+                            allow="autoplay; fullscreen; picture-in-picture"></iframe>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                </>
+            }
 
             {!videoPlayerState && (
                 <button className={styles.play} onClick={() => setVideoPlayerState(true)}>
