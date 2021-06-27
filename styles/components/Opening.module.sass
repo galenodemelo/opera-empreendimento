@@ -47,6 +47,7 @@
 
         button
             display: inline-block
+            visibility: hidden
             vertical-align: middle
             color: inherit
             font-family: inherit
@@ -57,7 +58,7 @@
             margin-top: 32px
             opacity: 0
             transition: padding .1s ease, opacity 1s ease, transform .8s ease
-            transition-delay: 3s
+            transition-delay: 4s
 
             &:first-of-type
                 transform: translateX(64px)
@@ -75,6 +76,8 @@
                 transform: translateY(0)
 
             button
+                visibility: visible
+
                 &:first-of-type,
                 &:last-of-type
                     transform: translateX(0)
