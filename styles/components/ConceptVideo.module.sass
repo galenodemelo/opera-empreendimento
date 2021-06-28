@@ -1,9 +1,9 @@
 .conceptVideo
     background: url('/videos/concept-video-cover.jpg') center center no-repeat
     background-size: cover
+    background: #000000
 
     &[data-video-active="true"]
-        background: #000000
 
     .video
         position: absolute
@@ -24,4 +24,12 @@
         top: 0
         right: 0
         bottom: 0
+        width: 80px
+        height: 80px
         z-index: 10
+        transition: width .2s ease, height .2s ease
+
+        &:hover
+            width: 100px
+            height: 100px
+            cursor: pointer
