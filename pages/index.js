@@ -34,8 +34,12 @@ export default function Home(props) {
                 <title>Opera: Cada tom, uma história | Investcorp Empreendimentos</title>
             </Head>
 
+            {activeIndex > 0 &&
+                <>
             <NavMenu currentSlide={activeIndex}/>
             <MusicPlayer currentSlide={activeIndex} isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
+                </>
+            }
             
             <Swiper className="panel"
                     direction="vertical"
