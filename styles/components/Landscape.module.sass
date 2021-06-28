@@ -17,12 +17,31 @@
             margin: 0 auto
             background-color: #ffffff
             width: 2px
+            height: 0
+            transition: height 1.5s ease
+            transition-delay: 1.2s
         
         h2 
+            opacity: 0
             font-size: 2rem
+            transition: opacity 1.5s ease
+            transition-delay: 2s
             @include georgia()
 
         p
+            opacity: 0
             font-size: .9rem
+            transition: opacity 1.5s ease
+            transition-delay: 2.2s
             @include zona-pro()
             
+    &[data-active="true"]
+        .lettering
+            hr
+                height: 100%
+
+            h2
+                opacity: 1
+
+            p
+                opacity: 1
