@@ -36,8 +36,8 @@ export default function Home(props) {
 
             {activeIndex > 0 &&
                 <>
-            <NavMenu currentSlide={activeIndex}/>
-            <MusicPlayer currentSlide={activeIndex} isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
+                    <NavMenu currentSlide={activeIndex}/>
+                    <MusicPlayer currentSlide={activeIndex} isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} />
                 </>
             }
             
@@ -60,15 +60,15 @@ export default function Home(props) {
                 </SwiperSlide>
                 
                 <SwiperSlide data-hash="cada-tom-uma-historia">
-                    <Landscape/>
+                    {({ isActive }) => ( <Landscape active={isActive}/> )}
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <ConceptVideo/>
+                    {({ isActive }) => ( <ConceptVideo active={isActive}/> )}
                 </SwiperSlide>
                 
                 <SwiperSlide data-hash="tradicao-contemporanea">
-                    <Location/>
+                    {({ isActive }) => ( <Location active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide>
@@ -108,9 +108,7 @@ export default function Home(props) {
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="investcorp">
-                    {({ isActive }) => (
-                        <Investcorp play={isActive}/>
-                    )}
+                    {({ isActive }) => (<Investcorp play={isActive}/>)}
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="contato">
