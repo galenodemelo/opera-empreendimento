@@ -1,9 +1,10 @@
 @import ./../constants
+@import ./../animations
     
 .landscape
     .lettering
         display: grid
-        grid-template-rows: auto 24px 12px
+        grid-template-rows: auto 32px 12px
         row-gap: 24px
         position: absolute
         top: 0
@@ -24,8 +25,6 @@
         h2 
             opacity: 0
             font-size: 2rem
-            transition: opacity 1.5s ease
-            transition-delay: 2s
             @include georgia()
 
         p
@@ -41,7 +40,9 @@
                 height: 100%
 
             h2
-                opacity: 1
+                animation-delay: 2s
+                animation-duration: 2.5s
 
             p
-                opacity: 1
+                animation-delay: 2.2s
+                animation-duration: 4s

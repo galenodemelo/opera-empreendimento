@@ -1,5 +1,6 @@
 @import ./reset.css
 @import ./fonts.css
+@import ./animations
 
 html,
 body 
@@ -33,3 +34,8 @@ video
     &[data-active="true"]
         .zoom-in
             transform: scale(1)
+
+        .fade-in-text
+            animation-name: fade-in-text
+            animation-timing-function: ease-in-out
+            animation-fill-mode: forwards

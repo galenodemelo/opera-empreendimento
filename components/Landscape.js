@@ -8,8 +8,8 @@ export default function Landscape({active}) {
 
             <div className={styles.lettering}>
                 <hr />
-                <h2>Cada tom, uma história</h2>
-                <p>Rua Leopoldo Fischer, 100</p>
+                <h2 className="fade-in-text">Cada tom, uma história</h2>
+                <p className="fade-in-text">Rua Leopoldo Fischer, 100</p>
             </div>
         </section>
     )
