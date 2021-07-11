@@ -1,9 +1,13 @@
 import PictureSlider from "./templates/PictureSlider"
 import Textbox from "./templates/Textbox"
 
+let isActive = false
+
 export default function Location({active}) {
+    if (active) isActive = true
+
     return (
-        <section className="panel panel--divided" data-active={active}>
+        <section className="panel panel--divided" data-active={isActive}>
             <PictureSlider imageList={[
                 { url: "/img/sliders/tradition/daytime-building.jpg", alt: "Foto da fachada do empreendimento Opera de manhã" },
                 { url: "/img/sliders/tradition/nighttime-building.jpg", alt: "Foto da fachada do empreendimento Opera à noite" }
