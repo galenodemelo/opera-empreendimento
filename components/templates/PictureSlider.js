@@ -3,7 +3,7 @@ import styles from "./../../styles/components/templates/PictureSlider.module.sas
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Pagination } from "swiper"
 
-export default function PictureSlider({imageList, objectFit = "cover"}) {
+export default function PictureSlider({imageList, objectFit = "cover", className = null}) {
 
     SwiperCore.use([Pagination])
 
@@ -24,8 +24,11 @@ export default function PictureSlider({imageList, objectFit = "cover"}) {
         }
     }
 
+    const swiperClassList = [styles.pictureSlider]
+    if (className) swiperClassList.push(className)
+
     return (
-        <Swiper className={styles.pictureSlider}
+        <Swiper className={swiperClassList.join(" ")}
                 speed={300}
                 pagination={paginationConfig}>
             {imageList.map((item, index) => {

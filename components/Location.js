@@ -7,7 +7,7 @@ export default function Location({active}) {
             <PictureSlider imageList={[
                 { url: "/img/sliders/tradition/daytime-building.jpg", alt: "Foto da fachada do empreendimento Opera de manhã" },
                 { url: "/img/sliders/tradition/nighttime-building.jpg", alt: "Foto da fachada do empreendimento Opera à noite" }
-            ]} />
+            ]} className="slide-in-left" />
 
             <Textbox title={`A tradição 
                              contemporânea`}

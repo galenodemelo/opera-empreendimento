@@ -34,6 +34,10 @@ video
 .fade-in-text
     opacity: 0
 
+.slide-in-left
+    transform: translateX(-50vw)
+    animation-duration: 1.2s
+
 .slide-in-bottom
     opacity: 0
 
@@ -46,7 +50,11 @@ video
 
     .fade-in-text
         animation-name: fade-in-text
-        animation-timing-function: ease-in-out
+
+    .slide-in-left
+        animation-name: slide-in-left
+        animation-timing-function: ease-out
+        animation-fill-mode: forwards
         animation-fill-mode: forwards
 
     .slide-in-bottom
