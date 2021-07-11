@@ -31,11 +31,30 @@ video
         transition: transform 1.2s ease
         transition-delay: .2s
 
-    &[data-active="true"]
-        .zoom-in
-            transform: scale(1)
+.fade-in-text
+    opacity: 0
 
-        .fade-in-text
-            animation-name: fade-in-text
-            animation-timing-function: ease-in-out
-            animation-fill-mode: forwards
+.slide-in-bottom
+    opacity: 0
+
+.slide-in-bar
+    height: 0
+
+*[data-active="true"]
+    .zoom-in
+        transform: scale(1)
+
+    .fade-in-text
+        animation-name: fade-in-text
+        animation-timing-function: ease-in-out
+        animation-fill-mode: forwards
+
+    .slide-in-bottom
+        animation-name: slide-in-bottom
+        animation-timing-function: ease-in-out
+        animation-fill-mode: forwards
+
+    .slide-in-bar
+        animation-name: slide-in-bar
+        animation-timing-function: ease-in-out
+        animation-fill-mode: forwards

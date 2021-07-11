@@ -2,18 +2,18 @@
 
 .textbox
     display: grid
-    grid-template-rows: 1fr auto 1fr
+    grid-template-rows: 2fr auto 1fr
     row-gap: 24px
     padding-left: 200px
     
     &:last-child
         padding-left: 100px
-        
 
     hr
         margin-left: 96px
         width: 1px
         background-color: #000000
+        animation-duration: 1.2s
 
     .content
         color: #070707
@@ -22,6 +22,8 @@
             text-transform: uppercase
             font-size: 2rem
             line-height: 1.4
+            animation-delay: 1s
+            animation-duration: .5s
             @include georgia()
 
         p
@@ -31,4 +33,10 @@
             max-width: 700px
             padding-right: 48px
             box-sizing: border-box
+            animation-delay: 1.2s
+            animation-duration: .5s
             @include metrisch()
+
+        div
+            animation-delay: 1.4s
+            animation-duration: .5s
