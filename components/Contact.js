@@ -1,8 +1,26 @@
+import { useEffect, useRef } from "react"
 import styles from "./../styles/components/Contact.module.sass"
 
-export default function Contact() {
+let isActive = false
+
+export default function Contact({active}) {
+    if (active && !isActive) isActive = true
+
+    const videoPlayer = useRef()
+
+    useEffect(() => {
+        if (isActive) {
+            setTimeout(() => {
+                videoPlayer.current.play()
+            }, 800)
+        } else {
+            videoPlayer.current.pause()
+        }
+
+    })
+
     return (
-        <section className={[styles.contact, "panel"].join(" ")}>
+        <section className={[styles.contact, "panel"].join(" ")} data-active={isActive}>
             <form action="#" method="POST" className={styles.form}>
                 <p className={styles.intro}>Para mais informações, preencha o formulário abaixo.</p>
                 <div className={styles.divided}>
@@ -39,12 +57,12 @@ export default function Contact() {
             </form>
 
             <div className={styles.logo}>
-                <hr/>
-                <figure>
-                    <img src="/img/logo.svg" alt="Opera - Um empreendimento Investcorp" />
-                    <figcaption>Cada tom, uma história</figcaption>
-                </figure>
-                <p>
+                <hr className="slide-in-bar" />
+                <video muted={true} controls={false} className={styles.background} ref={videoPlayer}>
+                    <source src="/videos/logo-contato.webm" type="video/webm"/>
+                    <source src="/videos/logo-contato.mp4" type="video/mp4"/>
+                </video>
+                <p className="slide-in-bottom">
                     Rua Leopoldo Fischer, 100 - Joinville/SC<br />
                     &copy; 2021 Opera. All rights reserved.
                 </p>

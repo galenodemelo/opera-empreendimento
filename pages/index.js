@@ -108,11 +108,11 @@ export default function Home(props) {
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="investcorp">
-                    {({ isActive }) => (<Investcorp active={isActive}/>)}
+                    {({ isActive }) => ( <Investcorp active={isActive}/> )}
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="contato">
-                    <Contact/>
+                {({ isActive }) => ( <Contact active={isActive} /> )}
                 </SwiperSlide>
             </Swiper>
         </>
