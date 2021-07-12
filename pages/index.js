@@ -41,7 +41,7 @@ export default function Home(props) {
                 </>
             }
             
-            <Swiper className="panel"
+            <Swiper className="panel main-swiper"
                     direction="vertical"
                     hashNavigation={{watchState: true}}
                     shortSwipes={false}
