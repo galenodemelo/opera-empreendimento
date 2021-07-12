@@ -3,7 +3,7 @@
 @import ./animations
 
 html,
-body 
+body
     overflow: hidden
 
 button,
@@ -33,16 +33,28 @@ video
 
 .fade-in-text
     opacity: 0
+    animation-duration: 2s
+    animation-delay: 1s
+
+.slide-in-left,
+.slide-in-right
+    animation-duration: 1.2s
 
 .slide-in-left
     transform: translateX(-50vw)
     animation-duration: 1.2s
 
+.slide-in-right
+    transform: translateX(50vw)
+
 .slide-in-bottom
     opacity: 0
+    animation-duration: 1s
+    animation-delay: 1s
 
 .slide-in-bar
     height: 0
+    animation-duration: 2s
 
 *[data-active="true"]
     .zoom-in
@@ -50,19 +62,25 @@ video
 
     .fade-in-text
         animation-name: fade-in-text
+        animation-timing-function: ease-out
+        animation-fill-mode: forwards
 
     .slide-in-left
         animation-name: slide-in-left
         animation-timing-function: ease-out
         animation-fill-mode: forwards
+
+    .slide-in-right
+        animation-name: slide-in-right
+        animation-timing-function: ease-out
         animation-fill-mode: forwards
 
     .slide-in-bottom
         animation-name: slide-in-bottom
-        animation-timing-function: ease-in-out
+        animation-timing-function: ease-out
         animation-fill-mode: forwards
 
     .slide-in-bar
         animation-name: slide-in-bar
-        animation-timing-function: ease-in-out
+        animation-timing-function: ease-out
         animation-fill-mode: forwards

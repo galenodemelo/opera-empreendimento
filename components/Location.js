@@ -4,7 +4,7 @@ import Textbox from "./templates/Textbox"
 let isActive = false
 
 export default function Location({active}) {
-    if (active) isActive = true
+    if (active && !isActive) isActive = true
 
     return (
         <section className="panel panel--divided" data-active={isActive}>

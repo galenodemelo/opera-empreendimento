@@ -3,20 +3,24 @@ import Lightbox from "./templates/Lightbox"
 import styles from "./../styles/components/Plans.module.sass"
 import { useState } from "react"
 
-export default function Plans() {
+let isActive = false
+
+export default function Plans({active}) {
     const [isFirstToneOpened, setIsFirstToneOpened] = useState(false)
     const [isSecondToneOpened, setIsSecondToneOpened] = useState(false)
     const [isThirdToneOpened, setIsThirdToneOpened] = useState(false)
     const [isFourthToneOpened, setIsFourthToneOpened] = useState(false)
 
+    if (active && !isActive) isActive = true
+
     return (
-        <section className={[styles.plans, "panel"].join(" ")}>
-            <hr/>
-            <h2>Plantas</h2>
+        <section className={[styles.plans, "panel"].join(" ")} data-active={isActive}>
+            <hr className="slide-in-bar" />
+            <h2 className="slide-in-bottom">Plantas</h2>
             
             <nav className={styles.nav}>
                 {/* FIRST TONE */}
-                <Button label="Sublime" sub="261m²" inverted="true" onClick={() => setIsFirstToneOpened(true)}/>
+                <Button label="Sublime" sub="261m²" inverted="true" onClick={() => setIsFirstToneOpened(true)} className="slide-in-bottom" />
                 <Lightbox imageList={[{url: "/img/plans/first-tone-01.jpg", alt: "Planta do apartamento 1º Tom do empreendimento Ópera"}]}
                           opened={isFirstToneOpened} 
                           setIsOpened={setIsFirstToneOpened}
@@ -31,7 +35,7 @@ export default function Plans() {
                                                Living integrado`}}/>
 
                 {/* SECOND TONE */}
-                <Button label="Exímio" sub="199m²" inverted="true" onClick={() => setIsSecondToneOpened(true)}/>
+                <Button label="Exímio" sub="199m²" inverted="true" onClick={() => setIsSecondToneOpened(true)} className="slide-in-bottom" />
                 <Lightbox imageList={[{url: "/img/plans/second-tone-01.jpg", alt: "Planta do apartamento 2º Tom do empreendimento Ópera"}]}
                           opened={isSecondToneOpened} 
                           setIsOpened={setIsSecondToneOpened}
@@ -46,7 +50,7 @@ export default function Plans() {
 
 
                 {/* THIRD TONE */}
-                <Button label="Ápice" sub="434m²" inverted="true" onClick={() => setIsThirdToneOpened(true)}/>
+                <Button label="Ápice" sub="434m²" inverted="true" onClick={() => setIsThirdToneOpened(true)} className="slide-in-bottom" />
                 <Lightbox imageList={[{url: "/img/plans/third-tone-01.jpg", alt: "Planta do apartamento 3º Tom do empreendimento Ópera"},
                                       {url: "/img/plans/third-tone-02.jpg", alt: "Planta do apartamento 3º Tom do empreendimento Ópera"}]}
                           opened={isThirdToneOpened} 
@@ -63,7 +67,7 @@ export default function Plans() {
                                                2 unidades apenas (25º e 27º andar)`}}/>
 
                 {/* FOURTH TONE */}
-                <Button label="Apogeo" sub="431m²" inverted="true" onClick={() => setIsFourthToneOpened(true)}/>
+                <Button label="Apogeo" sub="431m²" inverted="true" onClick={() => setIsFourthToneOpened(true)}  className="slide-in-bottom" />
                 <Lightbox imageList={[{url: "/img/plans/fourth-tone-01.jpg", alt: "Planta do apartamento 4º Tom do empreendimento Ópera"}]}
                           opened={isFourthToneOpened} 
                           setIsOpened={setIsFourthToneOpened}

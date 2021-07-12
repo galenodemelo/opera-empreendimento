@@ -34,7 +34,7 @@ export default function PictureSlider({imageList, objectFit = "cover", className
             {imageList.map((item, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt} loading="lazy" />
+                        <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt} />
                     </SwiperSlide>
                 )
             })}

@@ -1,17 +1,21 @@
 import Image from "next/image"
 import styles from "./../styles/components/Naturality.module.sass"
 
-export default function Naturality() {
+let isActive = false
+
+export default function Naturality({active}) {
+    if (active && !isActive) isActive = true
+
     return (
-        <section className={[styles.naturality, "panel"].join(" ")}>
+        <section className={[styles.naturality, "panel"].join(" ")} data-active={isActive}>
             <div className={styles.textbox}>
-                <hr/>
+                <hr className="slide-in-bar" />
                 <div className={styles.content}>
-                    <h2>A naturalidade</h2>
+                    <h2 className="fade-in-text">A naturalidade</h2>
                 </div>
             </div>
             <div className={styles.picture}>
-                <Image src="/img/bg/naturality.jpg" layout="fill" objectFit="cover" loading="lazy"/>
+                <Image src="/img/bg/naturality.jpg" layout="fill" objectFit="cover" className="zoom-in"/>
             </div>
         </section>
     )

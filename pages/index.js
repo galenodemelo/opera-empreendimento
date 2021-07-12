@@ -72,11 +72,11 @@ export default function Home(props) {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" loading="lazy" />
+                    <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" />
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="sofisticacao">
-                    <Sophistication/>
+                    {({ isActive }) => ( <Sophistication active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide>
@@ -88,27 +88,27 @@ export default function Home(props) {
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="naturalidade">
-                    <Naturality/>
+                    {({ isActive }) => ( <Naturality active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <FirstTone/>
+                    {({ isActive }) => ( <FirstTone active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <SecondTone/>
+                    {({ isActive }) => ( <SecondTone active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <ThirdTone/>
+                    {({ isActive }) => ( <ThirdTone active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="plantas">
-                    <Plans/>
+                    {({ isActive }) => ( <Plans active={isActive} /> )}
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="investcorp">
-                    {({ isActive }) => (<Investcorp play={isActive}/>)}
+                    {({ isActive }) => (<Investcorp active={isActive}/>)}
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="contato">
