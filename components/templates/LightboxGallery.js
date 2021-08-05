@@ -1,11 +1,10 @@
-import Image from "next/image"
 import Lightbox from "./Lightbox"
 import styles from "./../../styles/components/templates/LightboxGallery.module.sass"
 import { useState } from "react"
 import PictureSlider from "./PictureSlider"
 
-export default function LightboxGallery({cover, lightbox, className = null}) {
-    const [isLightboxOpened, setIsLightboxOpened] = useState(false)
+export default function LightboxGallery({cover, lightbox, className = null, isLightboxOpened = false, setIsLightboxOpened = false}) {
+    if (!isLightboxOpened && !setIsLightboxOpened) [isLightboxOpened, setIsLightboxOpened] = useState(false)
 
     let lightboxGalleryClassList = [styles.lightboxGallery]
     if (className) lightboxGalleryClassList.push(className)
