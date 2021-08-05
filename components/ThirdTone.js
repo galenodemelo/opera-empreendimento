@@ -8,7 +8,7 @@ export default function ThirdTone({active}) {
 
     return (
         <section className="panel panel--divided" data-active={isActive}>
-            <LightboxGallery cover={{url: "/img/tones/3/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}}
+            <LightboxGallery cover={[{url: "/img/tones/3/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]}
                              lightbox={[{url: "/img/tones/3/full-1.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"},
                                         {url: "/img/tones/3/full-2.jpg", alt: "Foto da sala de estar do apartamento Opera"}]} 
                              className="slide-in-left"/>

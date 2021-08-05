@@ -2,6 +2,7 @@ import Image from "next/image"
 import Lightbox from "./Lightbox"
 import styles from "./../../styles/components/templates/LightboxGallery.module.sass"
 import { useState } from "react"
+import PictureSlider from "./PictureSlider"
 
 export default function LightboxGallery({cover, lightbox, className = null}) {
     const [isLightboxOpened, setIsLightboxOpened] = useState(false)
@@ -11,8 +12,8 @@ export default function LightboxGallery({cover, lightbox, className = null}) {
 
     return (
         <div className={lightboxGalleryClassList.join(" ")}>
-            <div className={styles.cover}>
-                <Image src={cover.url} alt={cover.alt} layout="fill" objectFit="cover" onClick={() => setIsLightboxOpened(true)} />
+            <div className={styles.cover} onClick={() => setIsLightboxOpened(true)}>
+                <PictureSlider imageList={cover} />
             </div>
 
             {lightbox &&

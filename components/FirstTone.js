@@ -8,7 +8,7 @@ export default function FirstTone({active}) {
 
     return (
         <section className="panel panel--divided" data-active={isActive}>
-            <LightboxGallery cover={{url: "/img/tones/1/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}} 
+            <LightboxGallery cover={[{url: "/img/tones/1/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]} 
                              lightbox={[{url: "/img/tones/1/full.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]}
                              className="slide-in-left" />
 

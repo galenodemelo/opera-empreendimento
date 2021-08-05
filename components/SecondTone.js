@@ -16,7 +16,7 @@ export default function SecondTone({active}) {
                             Living integrado`}
                      button={{text: "Tour 360"}}/>
             
-            <LightboxGallery cover={{url: "/img/tones/2/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}}
+            <LightboxGallery cover={[{url: "/img/tones/2/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]}
                              lightbox={[{url: "/img/tones/2/full.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]} 
                              className="slide-in-right" />
         </section>
