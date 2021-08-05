@@ -8,15 +8,18 @@
     position: absolute
     margin: auto
     top: 0
-    left: 0
     bottom: 0
-    right: 0
     width: 0
     height: 0
     background-color: rgba(255, 255, 255, 0.9)
     z-index: 10
     transition: opacity 1s ease
 
+    &--anchor-left
+        left: 0
+
+    &--anchor-right
+        right: 0
 
     &[data-opened="true"]
         width: 100vw

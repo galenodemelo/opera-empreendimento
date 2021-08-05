@@ -3,7 +3,7 @@ import styles from "./../../styles/components/templates/LightboxGallery.module.s
 import { useState } from "react"
 import PictureSlider from "./PictureSlider"
 
-export default function LightboxGallery({cover, lightbox, className = null, isLightboxOpened = false, setIsLightboxOpened = false}) {
+export default function LightboxGallery({cover, lightbox, className = null, isLightboxOpened = false, setIsLightboxOpened = false, anchor = "left"}) {
     if (!isLightboxOpened && !setIsLightboxOpened) [isLightboxOpened, setIsLightboxOpened] = useState(false)
 
     let lightboxGalleryClassList = [styles.lightboxGallery]
@@ -16,7 +16,7 @@ export default function LightboxGallery({cover, lightbox, className = null, isLi
             </div>
 
             {lightbox &&
-                <Lightbox imageList={lightbox} opened={isLightboxOpened} setIsOpened={setIsLightboxOpened}/>
+                <Lightbox imageList={lightbox} opened={isLightboxOpened} setIsOpened={setIsLightboxOpened} anchor={anchor}/>
             }
         </div>
     )

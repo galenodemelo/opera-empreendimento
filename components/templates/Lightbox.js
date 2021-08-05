@@ -2,9 +2,10 @@ import PictureSlider from "./PictureSlider"
 import Textbox from "./Textbox"
 import styles from "./../../styles/components/templates/Lightbox.module.sass"
 
-export default function Lightbox({imageList, opened, setIsOpened, inverted = false, text = null}) {
+export default function Lightbox({imageList, opened, setIsOpened, inverted = false, text = null, anchor = "left"}) {
 
     const classList = [styles.lightbox]
+    classList.push(styles[`lightbox--anchor-${anchor}`])
     if (inverted) classList.push(styles["lightbox--inverted"])
 
     const frameClassList = [styles.frame]
