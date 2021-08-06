@@ -8,7 +8,12 @@
     background-color: #000000
 
     video.logo
-        width: 100%
+        @include desktop-only
+            width: 100%
+
+        @include mobile-only
+            min-width: 100%
+            width: 800px
 
     img.logo
         width: 490px

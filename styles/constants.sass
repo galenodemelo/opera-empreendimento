@@ -9,3 +9,11 @@
 @mixin zona-pro()
     font-family: 'Zona Pro', Arial, Helvetica, sans-serif
     font-weight: 100
+
+@mixin desktop-only()
+    @media (min-width: 1080px)
+        @content
+
+@mixin mobile-only()
+    @media (max-width: 1080px)
+        @content

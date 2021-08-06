@@ -15,8 +15,8 @@ export default function Opening({setIsSoundActive}) {
         <section className={[styles.opening, "panel"].join(" ")} ref={section}>
             <h1>
                 <video muted={true} controls={false} className={styles.logo} autoPlay={true} ref={videoPlayer}>
-                    <source src="/videos/logo.webm" type="video/webm"/>
-                    <source src="/videos/logo.mp4" type="video/mp4"/>
+                    <source src="/videos/logo.webm" type="video/webm" />
+                    <source src="/videos/logo.mp4" type="video/mp4" />
                     <img src="/img/logo.svg" alt="Opera - Um empreendimento Investcorp" className={styles.logo} />
                 </video>
             </h1>
