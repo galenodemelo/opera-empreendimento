@@ -1,31 +1,38 @@
 @import ./../constants
 
 .sophistication
-    display: grid
-    grid-template-columns: 1fr 1fr
     background-color: #000000
+
+    @include desktop-only()
+        display: grid
+        grid-template-columns: 1fr 1fr
 
     .slider
         position: relative
         overflow: hidden
+        height: 100%
 
     .textbox
-        display: grid
-        grid-template-rows: 1fr auto 1fr
-        padding-right: 100px
-        row-gap: 24px
-        justify-content: center
+        @include mobile-only()
+            display: none
 
-        hr
-            margin: 0 auto
-            width: 1px
-            background-color: #ffffff
+        @include desktop-only()
+            display: grid
+            grid-template-rows: 1fr auto 1fr
+            padding-right: 100px
+            row-gap: 24px
+            justify-content: center
 
-        .content
-            h2
-                color: #ffffff
-                text-transform: uppercase
-                text-align: center
-                font-size: 2rem
-                line-height: 1.4
-                @include georgia()
+            hr
+                margin: 0 auto
+                width: 1px
+                background-color: #ffffff
+
+            .content
+                h2
+                    color: #ffffff
+                    text-transform: uppercase
+                    text-align: center
+                    font-size: 2rem
+                    line-height: 1.4
+                    @include georgia()
