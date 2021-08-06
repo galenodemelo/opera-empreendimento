@@ -4,15 +4,22 @@
 .landscape
     .lettering
         display: grid
-        grid-template-rows: auto 32px 12px
         row-gap: 24px
         position: absolute
         top: 0
-        left: 16vw
         text-transform: uppercase
         text-align: center
         color: #ffffff
-        height: 40vh
+
+        @include desktop-only()
+            grid-template-rows: auto 32px 12px
+            left: 16vw
+            height: 40vh
+
+        @include mobile-only()
+            grid-template-rows: 20vh auto auto
+            width: 160px
+            left: 5vw
 
         hr
             margin: 0 auto
@@ -22,10 +29,16 @@
             animation-duration: 2s
         
         h2 
-            font-size: 2rem
             animation-duration: 2s
             animation-delay: 1s
             @include georgia()
+
+            @include desktop-only()
+                font-size: 2rem
+
+            @include mobile-only()
+                font-size: 1.2rem
+                line-height: 140%
 
         p
             font-size: .9rem

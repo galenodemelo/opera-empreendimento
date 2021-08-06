@@ -8,11 +8,11 @@ export default function Landscape({active}) {
 
     return (
         <section className={[styles.landscape, "panel"].join(" ")} data-active={isActive}>
-            <Image src="/img/bg/landscape.jpg" layout="fill" objectFit="cover" quality="75" className="zoom-in" />
+            <Image src="/img/bg/landscape.jpg" layout="fill" objectFit="cover" quality="75" className="zoom-in" priority={true} objectPosition="80% center" />
 
             <div className={styles.lettering}>
                 <hr className="slide-in-bar" />
-                <h2 className="fade-in-text">Cada tom, uma história</h2>
+                <h2 className="fade-in-text">Cada tom, <wbr />uma história</h2>
                 <p className="fade-in-text">Rua Leopoldo Fischer, 100</p>
             </div>
         </section>
