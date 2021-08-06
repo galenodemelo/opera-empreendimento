@@ -4,10 +4,19 @@
     display: grid
     grid-template-rows: 2fr auto 1fr
     row-gap: 24px
-    padding-left: 200px
+
+    @include desktop-only()
+        padding-left: 200px
     
-    &:last-child
-        padding-left: 100px
+        &:last-child
+            padding-left: 100px
+
+    @include mobile-only()
+        align-items: center
+        justify-content: center
+        padding: 0 10vw
+        box-sizing: border-box
+        height: 100%
 
     hr
         margin-left: 96px

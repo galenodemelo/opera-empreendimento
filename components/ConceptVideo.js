@@ -5,7 +5,6 @@ import { useState } from "react"
 export default function ConceptVideo({active}) {
     const [videoPlayerState, setVideoPlayerState] = useState(false)
 
-
     return (
         <section className={[styles.conceptVideo, "panel"].join(" ")} data-active={active}>
             {videoPlayerState &&
