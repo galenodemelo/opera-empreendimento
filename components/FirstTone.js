@@ -10,7 +10,8 @@ export default function FirstTone({active}) {
         <section className="panel panel--divided" data-active={isActive}>
             <LightboxGallery cover={[{url: "/img/tones/1/cover.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]} 
                              lightbox={[{url: "/img/tones/1/full.jpg", alt: "Foto da sacada do apartamento Opera com churrasqueira"}]}
-                             className="slide-in-left" />
+                             className="slide-in-left"
+                             withArrow={true} />
 
             <Textbox title="1º tom - sublime" 
                      text={`261,23 m² 

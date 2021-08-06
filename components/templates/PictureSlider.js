@@ -3,7 +3,7 @@ import styles from "./../../styles/components/templates/PictureSlider.module.sas
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Pagination } from "swiper"
 
-export default function PictureSlider({imageList, objectFit = "cover", className = null}) {
+export default function PictureSlider({imageList, objectFit = "cover", className = null, anchor = null, withArrow = false}) {
 
     SwiperCore.use([Pagination])
 
@@ -27,6 +27,9 @@ export default function PictureSlider({imageList, objectFit = "cover", className
     const swiperClassList = [styles.pictureSlider]
     if (className) swiperClassList.push(className)
 
+    const arrowClassList = [styles.arrow]
+    if (withArrow) arrowClassList.push(styles[`arrow--anchor-${anchor}`])
+
     return (
         <Swiper className={swiperClassList.join(" ")}
                 speed={300}
@@ -46,6 +49,12 @@ export default function PictureSlider({imageList, objectFit = "cover", className
             })}
 
             <div className={[styles.pagination, "pagination"].join(" ")}></div>
+
+            {withArrow &&
+                <div className={arrowClassList.join(" ")}>
+                    <Image src="/img/ico/arrow-triangle.svg" layout="fill" objectFit="contain" />
+                </div>
+            }
         </Swiper>
     )
 }
