@@ -63,7 +63,7 @@ export default function Home(props) {
                     {({ isActive }) => ( <Landscape active={isActive}/> )}
                 </SwiperSlide>
                 
-                <SwiperSlide>
+                <SwiperSlide data-hash="video-apresentacao">
                     {({ isActive }) => ( <ConceptVideo active={isActive}/> )}
                 </SwiperSlide>
                 
@@ -71,7 +71,7 @@ export default function Home(props) {
                     {({ isActive }) => ( <Location active={isActive} /> )}
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="fachada">
                     <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" />
                 </SwiperSlide>
 
@@ -79,11 +79,11 @@ export default function Home(props) {
                     {({ isActive }) => ( <Sophistication active={isActive} /> )}
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="areas-comuns-1">
                     <PictureSlider imageList={props.commonAreas1}/>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="areas-comuns-2">
                     <PictureSlider imageList={props.commonAreas2}/>
                 </SwiperSlide>
 
@@ -91,15 +91,15 @@ export default function Home(props) {
                     {({ isActive }) => ( <Naturality active={isActive} /> )}
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="primeiro-tom">
                     {({ isActive }) => ( <FirstTone active={isActive} /> )}
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="segundo-tom">
                     {({ isActive }) => ( <SecondTone active={isActive} /> )}
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide data-hash="terceiro-tom">
                     {({ isActive }) => ( <ThirdTone active={isActive} /> )}
                 </SwiperSlide>
 
