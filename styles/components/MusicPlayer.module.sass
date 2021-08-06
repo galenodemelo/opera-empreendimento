@@ -1,8 +1,16 @@
+@import ./../constants
+
 .musicPlayer
     position: fixed
-    top: 64px
-    right: 64px
     z-index: 9999
+
+    @include desktop-only()
+        top: 64px
+        right: 64px
+
+    @include mobile-only()
+        top: 12px
+        right: 12px
 
     .switcher
         display: flex
