@@ -21,6 +21,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { HashNavigation, Mousewheel, Navigation } from "swiper"
 
 import { useState } from "react"
+import { isMobile } from "react-device-detect"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
@@ -44,7 +45,7 @@ export default function Home(props) {
             <Swiper className="panel main-swiper"
                     direction="vertical"
                     hashNavigation={{watchState: true}}
-                    shortSwipes={false}
+                    shortSwipes={isMobile}
                     mousewheel={true}
                     navigation={{nextEl: ".swiper-button-next"}}
                     onSlideChange={(evt) => setActiveIndex(evt.activeIndex)}
