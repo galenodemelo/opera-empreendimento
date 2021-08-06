@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import { isDesktop } from "react-device-detect"
 import styles from "./../styles/components/MusicPlayer.module.sass"
 
 export default function MusicPlayer({currentSlide, isSoundActive, setIsSoundActive}) {
@@ -13,8 +14,15 @@ export default function MusicPlayer({currentSlide, isSoundActive, setIsSoundActi
     }, [isSoundActive])
     
     const classList = [styles.musicPlayer]
+
+    let invertList
+    if (isDesktop) {
+        invertList = [2, 3, 5, 6, 7, 8, 11, 13, 14, 15]
+    } else {
+        invertList = [2, 3, 4, 6, 7, 8, 9, 10, 12, 14, 15, 16]
+    }
     
-    const shouldInvert = [2, 3, 5, 6, 7, 8, 11, 13, 14, 15].includes(currentSlide)
+    const shouldInvert = invertList.includes(currentSlide)
     if (shouldInvert) classList.push(styles["musicPlayer--inverted"])
 
     return (
