@@ -1,13 +1,16 @@
 @import ./../../constants
 
 .textbox
-    display: grid
-    grid-template-rows: 2fr auto 1fr
+    display: flex
+    flex-direction: column
     row-gap: 24px
+    width: 100%
+    max-height: 80vh
+    z-index: 0
 
     @include desktop-only()
         padding-left: 200px
-    
+
         &:last-child
             padding-left: 100px
 
@@ -18,21 +21,21 @@
         box-sizing: border-box
         height: 100%
 
-
     hr
+        height: 10vh
         margin-left: 96px
         width: 1px
         background-color: #000000
         animation-duration: 1.2s
 
     .content
-        color: #070707
 
         h2
             text-transform: uppercase
             line-height: 1.4
             animation-delay: 1s
             animation-duration: .5s
+            color: inherit
             @include georgia()
 
             @include desktop-only()

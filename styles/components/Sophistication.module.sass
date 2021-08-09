@@ -2,37 +2,23 @@
 
 .sophistication
     background-color: #000000
-
-    @include desktop-only()
-        display: grid
-        grid-template-columns: 1fr 1fr
+    color: #ffffff
 
     .slider
         position: relative
         overflow: hidden
         height: 100%
 
-    .textbox
-        @include mobile-only()
-            display: none
+    > div
+        max-height: 50vh
+        align-items: center
 
         @include desktop-only()
-            display: grid
-            grid-template-rows: 1fr auto 1fr
-            padding-right: 100px
-            row-gap: 24px
-            justify-content: center
+            margin-left: -200px
 
-            hr
-                margin: 0 auto
-                width: 1px
-                background-color: #ffffff
+    hr
+        margin: 0
+        background-color: #ffffff
 
-            .content
-                h2
-                    color: #ffffff
-                    text-transform: uppercase
-                    text-align: center
-                    font-size: 2rem
-                    line-height: 1.4
-                    @include georgia()
+    h2
+        text-align: center

@@ -33,6 +33,7 @@ export default function PictureSlider({imageList, objectFit = "cover", className
     return (
         <Swiper className={swiperClassList.join(" ")}
                 speed={300}
+                dir="ltr"
                 pagination={paginationConfig}>
             {imageList.map((item, index) => {
                 return (
