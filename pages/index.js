@@ -6,6 +6,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Investcorp from "../components/Investcorp"
 import Landscape from "../components/Landscape"
+import Location from "../components/Location"
 import MusicPlayer from "../components/MusicPlayer"
 import Naturality from "../components/Naturality"
 import NavMenu from "../components/NavMenu"
@@ -20,18 +21,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { HashNavigation, Mousewheel, Navigation } from "swiper"
 
 import { useState } from "react"
-import { isDesktop, isMobile } from "react-device-detect"
-import LocationGallery from "../components/LocationGallery"
-import LocationText from "../components/LocationText"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
     const [activeIndex, setActiveIndex] = useState(0)
-    const [isLightboxOpened, setIsLightboxOpened] = useState(false)
-
-    let isLocationActive = false
-    let isLocationGalleryActive = false
-    let isLocationTextActive = false
 
     SwiperCore.use([HashNavigation, Mousewheel, Navigation])
 
@@ -51,12 +44,17 @@ export default function Home(props) {
             <Swiper className="panel main-swiper"
                     direction="vertical"
                     hashNavigation={{watchState: true}}
-                    shortSwipes={isMobile}
+                    shortSwipes={true}
                     mousewheel={true}
                     navigation={{nextEl: ".swiper-button-next"}}
                     onSlideChange={(evt) => setActiveIndex(evt.activeIndex)}
                     slidesPerView={1}
-                    speed={1000}>
+                    speed={1000}
+                    breakpoints={{
+                        1080: {
+                            shortSwipes: false
+                        }
+                    }}>
                 
                 <SwiperSlide>
                     <Opening setIsSoundActive={setIsSoundActive}/>
@@ -74,48 +72,9 @@ export default function Home(props) {
                     {({ isActive }) => ( <ConceptVideo active={isActive}/> )}
                 </SwiperSlide>
                 
-                {isDesktop &&
-                    <SwiperSlide data-hash="tradicao-contemporanea">
-                        {({ isActive }) => {
-                            if (!isLocationActive && isActive) isLocationActive = true
-
-                            return (
-                                <section className="panel panel--divided" data-active={isLocationActive}>
-                                    <LocationGallery isLightboxOpened={isLightboxOpened} setIsLightboxOpened={setIsLightboxOpened} />
-                                    <LocationText setIsLightboxOpened={setIsLightboxOpened} />
-                                </section>
-                            )
-                        }}
-                    </SwiperSlide>
-                }
-
-                {isMobile &&
-                    <SwiperSlide data-hash="tradicao-contemporanea-galeria">
-                        {({ isActive }) => {
-                            if (!isLocationGalleryActive && isActive) isLocationGalleryActive = true
-
-                            return (
-                                <section className="panel" data-active={isLocationGalleryActive}>
-                                    <LocationGallery isLightboxOpened={isLightboxOpened} setIsLightboxOpened={setIsLightboxOpened} />
-                                </section>
-                            )
-                        }}
-                    </SwiperSlide>
-                }
-
-                {isMobile &&
-                    <SwiperSlide data-hash="tradicao-contemporanea-texto">
-                        {({ isActive }) => {
-                            if (!isLocationTextActive && isActive) isLocationTextActive = true
-
-                            return (
-                                <section className="panel" data-active={isLocationTextActive}>
-                                    <LocationText setIsLightboxOpened={setIsLightboxOpened} />
-                                </section>
-                            )
-                        }}
-                    </SwiperSlide>
-                }
+                <SwiperSlide data-hash="tradicao-contemporanea">
+                    {({ isActive }) => ( <Location active={isActive} />) }
+                </SwiperSlide>
 
                 <SwiperSlide data-hash="fachada">
                     <Image src="/img/bg/nighttime-facade.jpg" layout="fill" objectFit="cover" />
