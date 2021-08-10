@@ -11,8 +11,13 @@
     hr
         margin: 0 auto
         width: 2px
-        max-height: 130px
         background-color: #fff
+
+        @include desktop-only()
+            max-height: 130px
+        
+        @include mobile-only()
+            max-height: 50px
 
     h2
         margin-top: 40px
