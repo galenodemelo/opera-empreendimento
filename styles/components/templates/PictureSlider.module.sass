@@ -56,18 +56,22 @@
                     opacity: 1
 
     .arrow
-        position: absolute
-        height: 24px
-        width: 24px
-        margin: auto
-        top: 0
-        bottom: 0
-        z-index: 10
-        cursor: pointer
+        @include mobile-only()
+            display: none
 
-        &--anchor-right
-            left: 16px
-            transform: rotate(180deg)
+        @include desktop-only()
+            position: absolute
+            height: 24px
+            width: 24px
+            margin: auto
+            top: 0
+            bottom: 0
+            z-index: 10
+            cursor: pointer
 
-        &--anchor-left
-            right: 16px
+            &--anchor-right
+                left: 16px
+                transform: rotate(180deg)
+
+            &--anchor-left
+                right: 16px

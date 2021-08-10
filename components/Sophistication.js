@@ -21,21 +21,22 @@ export default function Sophistication({active}) {
                     direction: "horizontal",
                     slidesPerView: 2
                 }
-            }}>
-                <SwiperSlide>
-                    <section className={[styles.sophistication, "panel", "panel--centered"].join(" ")} data-active={isActive}>
-                        <Textbox title={`Bem-vindo 
-                                        à sofisticação`} />
-                    </section>
-                </SwiperSlide>
+            }}
+        >
+            <SwiperSlide>
+                <section className={[styles.sophistication, "panel", "panel--centered"].join(" ")} data-active={isActive}>
+                    <Textbox title={`Bem-vindo 
+                                    à sofisticação`} />
+                </section>
+            </SwiperSlide>
 
-                <SwiperSlide>
-                    <section className="panel" data-active={isActive}>
-                        <PictureSlider imageList={[{url: "/img/sliders/sophistication/1.jpg", alt: "Foto do hall de entrada do empreendimento Opera à noite"},
-                                               {url: "/img/sliders/sophistication/2.jpg", alt: "Foto da fachada do empreendimento Opera à noite"}]} />
+            <SwiperSlide>
+                <section className="panel" data-active={isActive}>
+                    <PictureSlider imageList={[{url: "/img/sliders/sophistication/1.jpg", alt: "Foto do hall de entrada do empreendimento Opera à noite"},
+                                            {url: "/img/sliders/sophistication/2.jpg", alt: "Foto da fachada do empreendimento Opera à noite"}]} />
 
-                    </section>
-                </SwiperSlide>
+                </section>
+            </SwiperSlide>
         </Swiper>
     )
 }

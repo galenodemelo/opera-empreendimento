@@ -39,7 +39,7 @@ export default function PictureSlider({imageList, objectFit = "cover", className
                 return (
                     <SwiperSlide key={index}>
                         {item.url &&
-                            <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt} />
+                            <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt}  />
                         }
 
                         {item.iframe &&
