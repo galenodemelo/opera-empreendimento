@@ -1,10 +1,9 @@
 @import ./../constants
 
 .investcorp
-    display: grid
-    align-items: center
-    grid-template-columns: 35% auto
     background-color: #000000
+    align-items: center
+    flex-direction: column
 
     .background
         height: 100%
@@ -12,16 +11,33 @@
         position: relative
 
     .text
-        display: flex
-        flex-direction: column
-        align-items: center
         text-align: center
-        color: #fff
 
         p
+            color: #fff
             max-width: 650px
             line-height: 1.4
-            font-size: .9rem
             margin-bottom: 24px
             @include metrisch()
+
+            @include desktop-only()
+                font-size: .9rem
+
+            @include mobile-only()
+                font-size: .7rem
+                line-height: 1.4
+                padding: 0 20px
+                text-align: left
+
+    .logo
+        position: relative
+
+        @include desktop-only()
+            width: 269px
+            height: 169px
+
+        @include mobile-only()
+            width: 200px
+            height: 100px
+            
             
