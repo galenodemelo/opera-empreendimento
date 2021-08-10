@@ -1,6 +1,7 @@
 @import ./reset.css
 @import ./fonts.css
 @import ./animations
+@import ./constants
 
 html,
 body
@@ -62,16 +63,17 @@ video
     animation-duration: 2s
     animation-delay: 1s
 
-.slide-in-left,
-.slide-in-right
-    animation-duration: 1.2s
+@include desktop-only()
+    .slide-in-left,
+    .slide-in-right
+        animation-duration: 1.2s
 
-.slide-in-left
-    transform: translateX(-50vw)
-    animation-duration: 1.2s
+    .slide-in-left
+        transform: translateX(-50vw)
+        animation-duration: 1.2s
 
-.slide-in-right
-    transform: translateX(50vw)
+    .slide-in-right
+        transform: translateX(50vw)
 
 .slide-in-bottom
     opacity: 0
