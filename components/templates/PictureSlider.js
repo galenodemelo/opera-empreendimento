@@ -34,12 +34,13 @@ export default function PictureSlider({imageList, objectFit = "cover", className
         <Swiper className={swiperClassList.join(" ")}
                 speed={300}
                 dir="ltr"
+                slidesPerView={1}
                 pagination={paginationConfig}>
             {imageList.map((item, index) => {
                 return (
                     <SwiperSlide key={index}>
                         {item.url &&
-                            <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt}  />
+                            <Image src={item.url} layout="fill" objectFit={objectFit} alt={item.alt} objectPosition="center center"  />
                         }
 
                         {item.iframe &&

@@ -56,21 +56,52 @@
             height: 100%
 
         &--with-text
-
             .close
-                top: 32px
-                right: 32px
+                @include desktop-only()
+                    top: 32px
+                    right: 32px
+
+                @include mobile-only()
+                    top: 16px
+                    right: 16px
 
             .content
                 display: grid
                 background-color: #ffffff
-                grid-template-rows: 100%
-                grid-template-columns: 3fr 1fr
-                align-items: flex-start
-                padding: 40px 40px 40px 0
                 box-sizing: border-box
 
-                *:last-child
+                @include desktop-only()
+                    padding: 40px 40px 40px 0
+                    align-items: flex-start
+                    grid-template-rows: 100%
+                    grid-template-columns: 3fr 1fr
+                
+                @include mobile-only()
+                    padding: 30px 2vw
+                    grid-template-rows: 1fr auto
+                    grid-template-columns: 100%
+
+                > *:last-child
                     padding: 0
                     text-align: left
+                    color: #070707
+
+                    @include mobile-only()
+                        justify-content: center
+                        width: 100%
+                        padding: 0 5vw
+
+                        hr 
+                            display: none
+
+                        h2
+                            margin-top: 0
+                            white-space: nowrap
+                            font-size: 1rem
+
+                        p
+                            margin-top: 12px
+                            font-size: .8rem
+                            line-height: 1.2
+
             
