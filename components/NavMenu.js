@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { isDesktop } from "react-device-detect"
 import styles from "./../styles/components/NavMenu.module.sass"
 
 export default function NavMenu({currentSlide}) {
@@ -22,13 +21,7 @@ export default function NavMenu({currentSlide}) {
 
     const classList = [styles.navigation]
 
-    let invertList
-    if (isDesktop) {
-        invertList = [2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 15]
-    } else {
-        invertList = [2, 3, 4, 6, 7, 7, 8, 9, 11, 13, 14, 15, 16]
-    }
-
+    const invertList = [2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 15]
     const shouldInvert = invertList.includes(currentSlide)
     if (shouldInvert) classList.push(styles["navigation--inverted"])
 
