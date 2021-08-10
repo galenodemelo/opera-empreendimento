@@ -1,15 +1,31 @@
 @import ./../constants
 
 .naturality
-    display: grid
-    grid-template-columns: 1fr 2fr
+
+    @include desktop-only()
+        display: grid
+        grid-template-columns: 1fr 2fr
+    
+    @include mobile-only()
+        display: flex
+        flex-direction: column-reverse
 
     .textbox
         display: grid
-        grid-template-rows: 1fr auto 1fr
-        padding-right: 24px
         row-gap: 24px
-        justify-content: flex-end
+
+        @include desktop-only()
+            grid-template-rows: 1fr auto 1fr
+            padding-right: 24px
+            justify-content: flex-end
+
+        @include mobile-only()
+            position: relative
+            top: -60vh
+            grid-template-rows: 60vh auto 1fr
+            justify-content: center
+            height: 40vh
+            z-index: 10
 
         hr
             margin: 0 auto
@@ -20,11 +36,21 @@
             h2
                 text-transform: uppercase
                 text-align: center
-                font-size: 2rem
                 line-height: 1.4
+                white-space: nowrap
                 @include georgia()
+
+                @include desktop-only()
+                    font-size: 2rem
+
+                @include mobile-only()
+                    font-size: 1.4rem
+                
 
     .picture
         position: relative
         display: flex
         justify-items: flex-end
+
+        @include mobile-only()
+            height: 60vh
