@@ -14,6 +14,7 @@ export default function Location({active}) {
         <Swiper 
             className="panel"
             direction="vertical"
+            dir="rtl"
             shortSwipes={true}
             slidesPerView={1}
             speed={1000}
@@ -23,6 +24,23 @@ export default function Location({active}) {
                     slidesPerView: 2
                 }
             }}>
+
+            <SwiperSlide>
+                <section className="panel panel--centered" data-active={isActive}>
+                    <Textbox title={`A tradição 
+                                contemporânea`}
+                        text="A tradição anda lado a lado com um roteiro clássico que alinha a tranquilidade de viver em um bairro nobre com as facilidades e modernidades de um empreendimento inteligente. Que tangência uma verdadeira obra de arte e valoriza cada tom dessa história."
+                        button={
+                            {
+                                text: "Localização",
+                                onClick: () => {
+                                    setIsLightboxOpened(true)
+                                }
+                            }
+                        }/>
+                </section>
+            </SwiperSlide>
+
             <SwiperSlide>
                 <section className="panel" data-active={isActive}>
                     <LightboxGallery cover={
@@ -49,22 +67,6 @@ export default function Location({active}) {
                         className="slide-in-left"
                         isLightboxOpened={isLightboxOpened}
                         setIsLightboxOpened={setIsLightboxOpened}/>
-                </section>
-            </SwiperSlide>
-
-            <SwiperSlide>
-                <section className="panel panel--centered" data-active={isActive}>
-                    <Textbox title={`A tradição 
-                                contemporânea`}
-                        text="A tradição anda lado a lado com um roteiro clássico que alinha a tranquilidade de viver em um bairro nobre com as facilidades e modernidades de um empreendimento inteligente. Que tangência uma verdadeira obra de arte e valoriza cada tom dessa história."
-                        button={
-                            {
-                                text: "Localização",
-                                onClick: () => {
-                                    setIsLightboxOpened(true)
-                                }
-                            }
-                        }/>
                 </section>
             </SwiperSlide>
         </Swiper>
