@@ -6,19 +6,15 @@ export default function Opening({setIsSoundActive}) {
     const section = useRef()
 
     useEffect(() => {
-        videoPlayer.current.addEventListener("ended", () => {
+        setTimeout(() => {
             section.current.classList.add(styles["opening--expanded"])
-        })
+        }, 5000)
     })
 
     return (
         <section className={[styles.opening, "panel"].join(" ")} ref={section}>
             <h1>
-                <video muted={true} controls={false} className={styles.logo} autoPlay={true} ref={videoPlayer}>
-                    <source src="/videos/logo.webm" type="video/webm" />
-                    <source src="/videos/logo.mp4" type="video/mp4" />
-                    <img src="/img/logo.svg" alt="Opera - Um empreendimento Investcorp" className={styles.logo} />
-                </video>
+                <img src="/img/logo-motion.gif" className={styles.logo} alt="Ópera Empreendimento" role="banner" />
             </h1>
 
             <nav className={styles.menu}>
