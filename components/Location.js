@@ -9,6 +9,7 @@ export default function Location({active}) {
     if (active && !isActive) isActive = true
 
     const [isLightboxOpened, setIsLightboxOpened] = useState(false)
+    const [lightboxActiveIndex, setLightboxActiveIndex] = useState(0)
 
     return (
         <Swiper 
@@ -35,6 +36,7 @@ export default function Location({active}) {
                                 text: "Localização",
                                 onClick: () => {
                                     setIsLightboxOpened(true)
+                                    setLightboxActiveIndex(1)
                                 }
                             }
                         }/>
@@ -66,7 +68,9 @@ export default function Location({active}) {
                         }
                         className="slide-in-left"
                         isLightboxOpened={isLightboxOpened}
-                        setIsLightboxOpened={setIsLightboxOpened}/>
+                        setIsLightboxOpened={setIsLightboxOpened}
+                        lightboxActiveIndex={lightboxActiveIndex}
+                        setLightboxActiveIndex={setLightboxActiveIndex} />
                 </section>
             </SwiperSlide>
         </Swiper>

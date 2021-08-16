@@ -2,7 +2,7 @@ import PictureSlider from "./PictureSlider"
 import Textbox from "./Textbox"
 import styles from "./../../styles/components/templates/Lightbox.module.sass"
 
-export default function Lightbox({imageList, opened, setIsOpened, inverted = false, text = null, anchor = "left"}) {
+export default function Lightbox({imageList, opened, setIsOpened, inverted = false, text = null, anchor = "left", activeIndex = 0}) {
 
     const classList = [styles.lightbox]
     classList.push(styles[`lightbox--anchor-${anchor}`])
@@ -19,7 +19,7 @@ export default function Lightbox({imageList, opened, setIsOpened, inverted = fal
                 </button>
                 {opened &&
                     <div className={styles.content}>
-                        <PictureSlider imageList={imageList} objectFit="contain"/>
+                        <PictureSlider imageList={imageList} objectFit="contain" activeIndex={activeIndex} />
 
                         {text &&
                             <Textbox title={text.title} text={text.description}/>
