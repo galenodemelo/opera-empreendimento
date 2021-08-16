@@ -8,7 +8,7 @@ export default function Landscape({active}) {
 
     return (
         <section className={[styles.landscape, "panel"].join(" ")} data-active={isActive}>
-            <Image src="/img/bg/landscape.jpg" layout="fill" objectFit="cover" quality="75" className="zoom-in" priority={true} objectPosition="80% center" />
+            <Image src="/img/bg/landscape.jpg" layout="fill" objectFit="cover" quality="100" className="zoom-in" priority={true} objectPosition="80% center" />
 
             <div className={styles.lettering}>
                 <hr className="slide-in-bar" />
