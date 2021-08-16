@@ -1,9 +1,12 @@
 import Button from "./Button"
 import styles from "./../../styles/components/templates/Textbox.module.sass"
 
-export default function Textbox({title, text = null, button = null}) {
+export default function Textbox({title, text = null, button = null, paddedLeft = false}) {
+    let classList = [styles.textbox]
+    if (paddedLeft) classList.push(styles["textbox--padded-left"])
+
     return (
-        <div className={styles.textbox}>
+        <div className={classList.join(" ")}>
             <hr className="slide-in-bar"/>
             <div className={styles.content}>
                 <h2 className="slide-in-bottom">

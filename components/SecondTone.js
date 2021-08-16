@@ -36,7 +36,8 @@ export default function SecondTone({active}) {
                                         window.open("http://elephant-skin.live/opera/Living/index.html", "_blank")
                                     }
                                 }
-                            }/>
+                            }
+                            paddedLeft={true} />
                     
                 </section>
             </SwiperSlide>
