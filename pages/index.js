@@ -88,12 +88,12 @@ export default function Home(props) {
                     <PictureSlider imageList={props.commonAreas1}/>
                 </SwiperSlide>
 
-                <SwiperSlide data-hash="areas-comuns-2">
-                    <PictureSlider imageList={props.commonAreas2}/>
-                </SwiperSlide>
-
                 <SwiperSlide data-hash="naturalidade">
                     {({ isActive }) => ( <Naturality active={isActive} /> )}
+                </SwiperSlide>
+
+                <SwiperSlide data-hash="areas-comuns-2">
+                    <PictureSlider imageList={props.commonAreas2}/>
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="primeiro-tom">
