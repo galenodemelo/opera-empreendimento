@@ -47,7 +47,7 @@ export default function NavMenu({currentSlide}) {
                 </nav>
 
                 <div className={styles.social}>
-                    <a href="https://www.instagram.com/investcorp/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/investcorp.empreendimentos/" target="_blank" rel="noopener noreferrer">
                         <img src="/img/ico/instagram.svg" alt="Ícone do Instagram" title="Siga-nos no Instagram" />
                     </a>
                     <a href="https://pt-br.facebook.com/InvestcorpEmpreendimentos" target="_blank" rel="noopener noreferrer">
