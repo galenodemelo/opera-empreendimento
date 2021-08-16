@@ -29,7 +29,14 @@ export default function SecondTone({active}) {
                                     Elevador social privativo
                                     Sacada gourmet
                                     Living integrado`}
-                            button={{text: "Tour 360"}}/>
+                            button={
+                                {
+                                    text: "Tour 360",
+                                    onClick: () => {
+                                        window.open("http://elephant-skin.live/opera/Living/index.html", "_blank")
+                                    }
+                                }
+                            }/>
                     
                 </section>
             </SwiperSlide>

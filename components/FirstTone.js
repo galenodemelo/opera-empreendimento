@@ -34,7 +34,12 @@ export default function FirstTone({active}) {
                                         Sacada gourmet 
                                         Living integrado`}
                         button={
-                            {text: "Tour 360"}
+                            {
+                                text: "Tour 360",
+                                onClick: () => {
+                                    window.open("http://elephant-skin.live/opera/Living/index.html", "_blank")
+                                }
+                            }
                         }/>
                 </section>
             </SwiperSlide>
