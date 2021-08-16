@@ -35,7 +35,7 @@ export default function Investcorp({active}) {
         >
             <SwiperSlide>
                 <section className={["panel", styles.investcorp].join(" ")} data-active={isActive}>
-                    <video muted={true} controls={false} className={styles.background} ref={videoPlayer}>
+                    <video muted={true} controls={false} className={styles.background} ref={videoPlayer} poster="/img/maestro.jpg">
                         <source src="/videos/maestro.webm" type="video/webm"/>
                         <source src="/videos/maestro.mp4" type="video/mp4"/>
                     </video>
