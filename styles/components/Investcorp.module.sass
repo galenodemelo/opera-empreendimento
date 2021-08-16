@@ -7,16 +7,19 @@
 
     .background
         height: 100%
-        width: 100%
+        max-width: 100%
         position: relative
 
     .text
         text-align: center
+        max-width: 550px
+
+        @include desktop-only()
+            margin-left: -190px
 
         p
             color: #fff
-            max-width: 650px
-            line-height: 1.4
+            line-height: 1.6
             margin-bottom: 24px
             @include metrisch()
 
@@ -31,6 +34,9 @@
 
     .logo
         position: relative
+
+        @include desktop-only()
+            margin-left: -190px
 
         @include desktop-only()
             width: 269px
