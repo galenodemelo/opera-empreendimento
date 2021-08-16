@@ -81,7 +81,7 @@ export default function Contact({active}) {
                     </video>
                     <p className="slide-in-bottom">
                         Rua Leopoldo Fischer, 100 - Joinville/SC<br />
-                        &copy; 2021 Opera. All rights reserved.
+                        Investcorp Empreendimentos &copy; {new Date().getFullYear()}
                     </p>
                 </section>
             </SwiperSlide>
