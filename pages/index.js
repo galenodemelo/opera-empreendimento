@@ -69,7 +69,7 @@ export default function Home(props) {
                 </SwiperSlide>
                 
                 <SwiperSlide data-hash="video-apresentacao">
-                    {({ isActive }) => ( <ConceptVideo active={isActive}/> )}
+                    {({ isActive }) => ( <ConceptVideo active={isActive} isSoundActive={isSoundActive} setIsSoundActive={setIsSoundActive} /> )}
                 </SwiperSlide>
                 
                 <SwiperSlide data-hash="tradicao-contemporanea">

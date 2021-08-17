@@ -2,9 +2,20 @@ import Image from "next/image"
 import styles from "./../styles/components/ConceptVideo.module.sass"
 import { useState } from "react"
 
-export default function ConceptVideo({active}) {
+let wasSoundActive = false
+
+export default function ConceptVideo({active, isSoundActive, setIsSoundActive}) {
     const [videoPlayerState, setVideoPlayerState] = useState(false)
-    if (videoPlayerState && !active) setVideoPlayerState(false)
+    if (videoPlayerState && !active) {
+        setVideoPlayerState(false)
+
+        if (wasSoundActive) setIsSoundActive(true)
+    }
+
+    if (videoPlayerState && isSoundActive) {
+        wasSoundActive = true
+        setIsSoundActive(false)
+    }
 
     return (
         <section className={[styles.conceptVideo, "panel"].join(" ")} data-active={active}>
