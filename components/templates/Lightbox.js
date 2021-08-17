@@ -7,6 +7,7 @@ export default function Lightbox({imageList, opened, setIsOpened, inverted = fal
     const classList = [styles.lightbox]
     classList.push(styles[`lightbox--anchor-${anchor}`])
     if (inverted) classList.push(styles["lightbox--inverted"])
+    if (activeIndex == 1) classList.push(styles["lightbox--marginTop"])
 
     const frameClassList = [styles.frame]
     if (text) frameClassList.push(styles["frame--with-text"])

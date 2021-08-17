@@ -26,6 +26,11 @@
         height: 100vh
         opacity: 1
 
+
+    @include mobile-only()
+        &--marginTop
+            margin-top: -100vh
+
     .close
         position: absolute
         top: 10%
