@@ -97,6 +97,13 @@ export default function Contact({active}) {
                             <label htmlFor="origin">Como nos conheceu?</label>
                             <select name="origin" id="origin">
                                 <option value="">Selecione uma opção</option>
+                                {["Corretor", "Eventos", "Mídia digital", "Outdoor", "Rádio", "Outros"].map((value, index) => {
+                                    return (
+                                        <option value={value} key={index}>
+                                            {value}
+                                        </option>
+                                    )
+                                })}
                             </select>
                         </div>
                         <div className={styles.group}>
