@@ -53,6 +53,9 @@
             font-size: .9rem
             @include zona-pro()
 
+            &:invalid:not(:focus):not(:placeholder-shown)
+                border: #f00 solid 2px
+
         textarea
             resize: none
             
