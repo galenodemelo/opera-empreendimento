@@ -29,9 +29,10 @@ export default function Contact({active}) {
         document.body.appendChild(script)
 
         // Recaptcha callback
-        window.recaptchaCallback = (token) => { 
+        window.recaptchaCallback = () => {
             if (!contactForm.current.reportValidity()) {
                 alert("Corrija os erros antes de prosseguir")
+                grecaptcha.reset()
                 return
             }
 
