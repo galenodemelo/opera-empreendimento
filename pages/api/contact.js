@@ -20,7 +20,7 @@ export default async (req, res) => {
         <p><b>Sobrenome:</b> ${lastName}</p>
         <p><b>E-mail:</b> ${email}</p>
         <p><b>Telefone:</b> ${phone}</p>
-        <p><b>Origem:</b> ${origin == "" || "<vazio>"}</p>
+        <p><b>Origem:</b> ${origin != "" ? origin : "<i>vazio</i>"}</p>
         <br><br>
         ${message}
     `
