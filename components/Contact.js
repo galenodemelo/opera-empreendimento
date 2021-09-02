@@ -6,7 +6,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 
 let isActive = false
 
-export default function Contact({active}) {
+export default function Contact({active, captchaSitekey}) {
     if (active && !isActive) isActive = true
 
     const videoPlayer = useRef()
@@ -21,41 +21,43 @@ export default function Contact({active}) {
             videoPlayer.current.pause()
         }
 
-        // Install Recaptcha code
-        const script = document.createElement("script")
-        script.src = "https://www.google.com/recaptcha/api.js"
-        script.async = true
-        script.defer = true
-        document.body.appendChild(script)
+        window.onload = () => {
+            // Install Recaptcha code
+            const script = document.createElement("script")
+            script.src = "https://www.google.com/recaptcha/api.js"
+            script.async = true
+            script.defer = true
+            document.body.appendChild(script)
 
-        // Recaptcha callback
-        window.recaptchaCallback = () => {
-            if (!contactForm.current.reportValidity()) {
-                alert("Corrija os erros antes de prosseguir")
-                grecaptcha.reset()
-                return
-            }
-
-            const formData = new FormData(contactForm.current)
-            fetch(contactForm.current.getAttribute("action"), {
-                method: contactForm.current.getAttribute("method"),
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(Object.fromEntries(formData))
-            })
-            .then(response => {
-                grecaptcha.reset()
-                if (!response.ok) {
-                    alert("Ocorreu um erro. Tente novamente!")
+            // Recaptcha callback
+            window.recaptchaCallback = () => {
+                if (!contactForm.current.reportValidity()) {
+                    alert("Corrija os erros antes de prosseguir")
+                    grecaptcha.reset()
                     return
                 }
-
-                contactForm.current.reset()
-                alert("Enviado com sucesso! Você receberá uma cópia no seu e-mail.")
-            })
-            .catch(error => {
-                console.log(error)
-                alert("Ocorreu um erro. Tente novamente!")
-            })
+    
+                const formData = new FormData(contactForm.current)
+                fetch(contactForm.current.getAttribute("action"), {
+                    method: contactForm.current.getAttribute("method"),
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                })
+                .then(response => {
+                    grecaptcha.reset()
+                    if (!response.ok) {
+                        alert("Ocorreu um erro. Tente novamente!")
+                        return
+                    }
+    
+                    contactForm.current.reset()
+                    alert("Enviado com sucesso! Você receberá uma cópia no seu e-mail.")
+                })
+                .catch(error => {
+                    console.log(error)
+                    alert("Ocorreu um erro. Tente novamente!")
+                })
+            }
         }
     })
 
@@ -113,7 +115,7 @@ export default function Contact({active}) {
                         </div>
                         <p className={styles.note}>Nota: deixe sua permissão para que possamos entrar em contato com você, via e-mail ou celular.</p>
                         
-                        <button type="button" className={[styles.submit, "g-recaptcha"].join(" ")} data-sitekey={process.env.RECAPTCHA_SITE_KEY} data-callback="recaptchaCallback">
+                        <button type="button" className={[styles.submit, "g-recaptcha"].join(" ")} data-sitekey={captchaSitekey} data-callback="recaptchaCallback">
                             <img src="/img/ico/arrow.svg" alt="Ícone de seta. Ao clicar, enviará sua mensagem " title="Enviar mensagem" />
                         </button>
                     </form>

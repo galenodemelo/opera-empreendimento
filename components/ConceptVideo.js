@@ -22,7 +22,7 @@ export default function ConceptVideo({active, isSoundActive, setIsSoundActive}) 
             {videoPlayerState &&
                 <div className={styles.video}>
                     <iframe src="https://player.vimeo.com/video/595979072?title=0&byline=0&portrait=0&autoplay=1" 
-                            allow="autoplay; fullscreen; picture-in-picture" scroll="no"></iframe>
+                            allow="autoplay; fullscreen; picture-in-picture" scroll="no" loading="lazy"></iframe>
                     <script src="https://player.vimeo.com/api/player.js"></script>
                 </div>
             }

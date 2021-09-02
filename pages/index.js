@@ -1,30 +1,33 @@
 import Ballerina from "../components/Ballerina"
-import ConceptVideo from "../components/ConceptVideo"
-import Contact from "../components/Contact"
-import FirstTone from "../components/FirstTone"
 import Head from "next/head"
 import Image from "next/image"
-import Investcorp from "../components/Investcorp"
-import Landscape from "../components/Landscape"
-import Location from "../components/Location"
 import MusicPlayer from "../components/MusicPlayer"
-import Naturality from "../components/Naturality"
 import NavMenu from "../components/NavMenu"
 import Opening from "../components/Opening"
-import Plans from "../components/Plans"
-import PictureSlider from "../components/templates/PictureSlider"
-import SecondTone from "../components/SecondTone"
-import Sophistication from "../components/Sophistication"
-import ThirdTone from "../components/ThirdTone"
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { HashNavigation, Mousewheel, Navigation } from "swiper"
 
+import dynamic from "next/dynamic"
 import { useState } from "react"
 
 export default function Home(props) {
     const [isSoundActive, setIsSoundActive] = useState(false)
     const [activeIndex, setActiveIndex] = useState(0)
+    
+    const ConceptVideo = dynamic(() => import("./../components/ConceptVideo"))
+    const Contact = dynamic(() => import("./../components/Contact"))
+    const FirstTone = dynamic(() => import("./../components/FirstTone"))
+    const Investcorp = dynamic(() => import("./../components/Investcorp"))
+    const Landscape = dynamic(() => import("./../components/Landscape"))
+    const Location = dynamic(() => import("./../components/Location"))
+    const Naturality = dynamic(() => import("./../components/Naturality"))
+    const PictureSlider = dynamic(() => import("./../components/templates/PictureSlider"))
+    const Plans = dynamic(() => import("./../components/Plans"))
+    const SecondTone = dynamic(() => import("./../components/SecondTone"))
+    const Sophistication = dynamic(() => import("./../components/Sophistication"))
+    const ThirdTone = dynamic(() => import("./../components/ThirdTone"))
+
 
     SwiperCore.use([HashNavigation, Mousewheel, Navigation])
 
@@ -117,7 +120,7 @@ export default function Home(props) {
                 </SwiperSlide>
 
                 <SwiperSlide data-hash="contato">
-                    {({ isActive }) => ( <Contact active={isActive} /> )}
+                    {({ isActive }) => ( <Contact active={isActive} captchaSitekey={props.captchaSitekey} /> )}
                 </SwiperSlide>
             </Swiper>
         </>
@@ -127,6 +130,8 @@ export default function Home(props) {
 export async function getStaticProps() {
     return {
         props: {
+            captchaSitekey: process.env.RECAPTCHA_SITE_KEY,
+
             // First slider of common areas
             commonAreas1: [
                 {
