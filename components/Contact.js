@@ -17,11 +17,7 @@ export default function Contact({active, captchaSitekey}) {
             setTimeout(() => {
                 videoPlayer.current.play()
             }, 800)
-        } else {
-            videoPlayer.current.pause()
-        }
 
-        window.onload = () => {
             // Install Recaptcha code
             const script = document.createElement("script")
             script.src = "https://www.google.com/recaptcha/api.js"
@@ -58,6 +54,8 @@ export default function Contact({active, captchaSitekey}) {
                     alert("Ocorreu um erro. Tente novamente!")
                 })
             }
+        } else {
+            videoPlayer.current.pause()
         }
     })
 
